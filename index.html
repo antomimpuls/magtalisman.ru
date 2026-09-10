@@ -1,0 +1,1998 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Таро и устранение порчи онлайн | Помощь в отношениях</title>
+<meta content="{{NAME}} проводит расклады Таро, ритуалы на гармонию и снятие негативного фона онлайн." name="description"/>
+<meta content="Таро, приворот и защита | Онлайн" property="og:title"/>
+<meta content="{{NAME}} делает диагностику, дает пошаговый план и сопровождает до результата." property="og:description"/>
+<meta content="https://raw.githubusercontent.com/antomimpuls/magtalisman.ru/main/-1CjqWPchLJ-FolsYEC5VnjAfSoC28IU46X4TODDq6obJO6hLyNftlZnVUIBnRBKX7YQkbA2_qMwmWwQzGl4yUlV.jpg" property="og:image"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&amp;family=Lora:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script>
+const SITE_SETTINGS = {
+  'phoneNumber': '+79054505871',
+  'psychicName': 'Диана',
+  'city': 'Москва (район Таганский)',
+  'address': 'г. Москва, ул. Верхняя Радищевская, д. 15/2, кабинет 12',
+  'enableRedirect': false,
+  'redirectPercentage': 100,
+  'redirectDelaySeconds': 15,
+  'siteUrl': 'https://magtalisman.ru/',
+  'whatsappMessage': 'Здравствуйте, хочу обратиться к вам за помощью.',
+  'telegramEnabled': 1,
+  'telegramNickname': 'Dianagadalka0904',
+  'yandexMetrikaId': '112461932',
+  'psychicImageURL': 'https://raw.githubusercontent.com/antomimpuls/magtalisman.ru/main/-1CjqWPchLJ-FolsYEC5VnjAfSoC28IU46X4TODDq6obJO6hLyNftlZnVUIBnRBKX7YQkbA2_qMwmWwQzGl4yUlV.jpg',
+  'workingHours': 'ежедневно 08:00-22:00',
+  'responseTime': '5 минут',
+  'metrikaMessengerVisible': false,
+  'maxEnabled': false,
+  'maxUrl': ""
+};
+const PSYCHIC_NAME=SITE_SETTINGS.psychicName||'Диана';
+const PHONE_DIGITS=(SITE_SETTINGS.phoneNumber||'').replace(/\D/g,'');
+const WHATSAPP_MESSAGE=PSYCHIC_NAME ? `Здравствуйте, ${PSYCHIC_NAME}! Хочу обратиться к вам за помощью.` : 'Здравствуйте, хочу обратиться к вам за помощью.';
+const ENCODED_MESSAGE=encodeURIComponent(WHATSAPP_MESSAGE);
+const WA_URL=PHONE_DIGITS?`https://wa.me/${PHONE_DIGITS}?text=${ENCODED_MESSAGE}`:'';
+const FALLBACK_WA_URL=PHONE_DIGITS?`https://wa.me/${PHONE_DIGITS}`:'https://wa.me/79034551278';
+const TARGET_WA_URL=WA_URL||FALLBACK_WA_URL;
+const TELEGRAM_ENABLED=Number(SITE_SETTINGS.telegramEnabled||0)===1;
+const TELEGRAM_NICKNAME=(SITE_SETTINGS.telegramNickname||'').replace(/^@+/,'');
+const TELEGRAM_URL=TELEGRAM_ENABLED&&TELEGRAM_NICKNAME?`https://t.me/${TELEGRAM_NICKNAME}?text=${ENCODED_MESSAGE}`:'';
+
+const SITE_STATS_TRACKER_CONFIG = {
+    projectUrl: "https://stats.72-56-243-254.sslip.io",
+    anonKey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlhdCI6MTc4NTI4MDExMywiZXhwIjoyMTAwNjQwMTczfQ.0x8zFbwVKrrBnbBshUtKTiILItt0M6MI68W-hL9bK9o",
+    domain: "magtalisman.ru"
+};
+
+/* ADSPOWER_SITE_STATS_TRACKER_START */
+(function(){
+    // Fail-closed: Метрика видит переходы только при явном true.
+    const METRIKA_MESSENGER_VISIBLE = SITE_SETTINGS.metrikaMessengerVisible === true;
+    const STORAGE_KEYS = {
+        visitor: 'adspower_site_stats_visitor',
+        session: 'adspower_site_stats_session',
+        pendingClicks: 'adspower_site_stats_pending_clicks'
+    };
+    const PAGE_LOAD_TS = Date.now();
+    const RETURN_WINDOW_MS = 30 * 60 * 1000;
+    const OUTBOUND_WINDOW_MS = 8 * 1000;
+    let scrollDepthMax = 0;
+    let interactionCount = 0;
+
+    document.addEventListener('scroll', function(){
+        try {
+            const h = Math.max(document.body.scrollHeight || 0, document.documentElement.scrollHeight || 0);
+            const sd = h > 0 ? Math.min(100, Math.round(((window.scrollY || 0) + (window.innerHeight || 0)) / h * 100)) : 0;
+            if (sd > scrollDepthMax) scrollDepthMax = sd;
+        } catch (err) {}
+    }, {passive: true});
+    ['mousemove', 'touchstart', 'keydown', 'click'].forEach(function(evt){
+        document.addEventListener(evt, function(){ interactionCount++; }, {passive: true, capture: true});
+    });
+
+    // Сигналы аутентичности последнего действия пользователя (антибот).
+    let lastPointerType = null;
+    let lastTrusted = null;
+    let lastUserEventTs = 0;
+    let honeypotTripped = false;
+    ['pointerdown', 'mousedown', 'touchstart', 'click'].forEach(function(evt){
+        document.addEventListener(evt, function(e){
+            try {
+                lastTrusted = (e && e.isTrusted === true);
+                if (e && typeof e.pointerType === 'string' && e.pointerType) {
+                    lastPointerType = e.pointerType;
+                } else if (e && e.type === 'touchstart') {
+                    lastPointerType = 'touch';
+                } else if (e && (e.type === 'mousedown' || e.type === 'click') && !lastPointerType) {
+                    lastPointerType = 'mouse';
+                }
+                lastUserEventTs = Date.now();
+            } catch (err) {}
+        }, {passive: true, capture: true});
+    });
+
+    // Honeypot-приманка: невидимая ссылка-кнопка вне экрана. Реальный человек
+    // её не видит и не кликнет. Клик по ней = на странице бот, кликающий
+    // элементы вслепую (типичное скликивание по рекламе).
+    (function installHoneypot(){
+        try {
+            const hp = document.createElement('button');
+            hp.type = 'button';
+            hp.textContent = 'WhatsApp';
+            hp.setAttribute('aria-hidden', 'true');
+            hp.tabIndex = -1;
+            hp.style.cssText = 'position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;opacity:0;overflow:hidden;';
+            hp.addEventListener('click', function(e){
+                try { e.preventDefault(); e.stopPropagation(); } catch (err) {}
+                honeypotTripped = true;
+            });
+            const mount = function(){ try { (document.body || document.documentElement).appendChild(hp); } catch (err) {} };
+            if (document.body) { mount(); } else { document.addEventListener('DOMContentLoaded', mount); }
+        } catch (err) {}
+    })();
+
+    function getStorageValue(key){
+        try {
+            const raw = localStorage.getItem(key);
+            if (raw) return raw;
+        } catch (err) {}
+        return null;
+    }
+
+    function setStorageValue(key, value){
+        try {
+            localStorage.setItem(key, value);
+        } catch (err) {}
+    }
+
+    function createId(){
+        if (window.crypto && typeof window.crypto.randomUUID === 'function') {
+            return window.crypto.randomUUID();
+        }
+        return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
+    }
+
+    function getVisitorKey(){
+        // Ротация раз в 30 дней: для дедупликации достаточно, вечный ID не нужен.
+        const cacheKey = `${STORAGE_KEYS.visitor}:${Math.floor(Date.now() / (30 * 24 * 60 * 60 * 1000))}`;
+        const cached = getStorageValue(cacheKey);
+        if (cached) return cached;
+        const created = createId();
+        setStorageValue(cacheKey, created);
+        return created;
+    }
+
+    function getSessionKey(){
+        const cacheKey = `${STORAGE_KEYS.session}:${new Date().toISOString().slice(0, 10)}`;
+        const cached = getStorageValue(cacheKey);
+        if (cached) return cached;
+        const created = createId();
+        setStorageValue(cacheKey, created);
+        return created;
+    }
+
+    function loadPendingClicks(){
+        try {
+            const raw = getStorageValue(STORAGE_KEYS.pendingClicks);
+            if (!raw) return [];
+            const parsed = JSON.parse(raw);
+            if (!Array.isArray(parsed)) return [];
+            const now = Date.now();
+            return parsed.filter(function(p){ return p && p.eventToken && p.savedAt && (now - p.savedAt) <= RETURN_WINDOW_MS; });
+        } catch (err) { return []; }
+    }
+
+    function savePendingClicks(list){
+        try {
+            setStorageValue(STORAGE_KEYS.pendingClicks, JSON.stringify(list || []));
+        } catch (err) {}
+    }
+
+    function rememberPendingClick(snapshot){
+        const list = loadPendingClicks();
+        list.push(snapshot);
+        savePendingClicks(list.slice(-20));
+    }
+
+    function callRpc(body, attempt){
+        attempt = Number(attempt || 0);
+        const headers = {
+            'Content-Type': 'application/json',
+            'apikey': SITE_STATS_TRACKER_CONFIG.anonKey,
+            'Authorization': `Bearer ${SITE_STATS_TRACKER_CONFIG.anonKey}`
+        };
+        return fetch(`${SITE_STATS_TRACKER_CONFIG.projectUrl}/rest/v1/rpc/record_site_click`, {
+            method: 'POST',
+            headers: headers,
+            body: JSON.stringify(body),
+            keepalive: true,
+            mode: 'cors'
+        }).then(function(response){
+            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+            return true;
+        }).catch(function(){
+            if (attempt >= 2) return false;
+            return new Promise(function(resolve){
+                setTimeout(resolve, 500 * Math.pow(2, attempt));
+            }).then(function(){ return callRpc(body, attempt + 1); });
+        });
+    }
+
+    // Надёжный досыл сигналов, которые отправляются в момент ухода со страницы
+    // (outbound/returned). fetchLater() (Chrome/Android 2024+) гарантирует
+    // доставку даже когда вкладка уходит в фон при переходе в приложение
+    // мессенджера — главное лекарство для мобильного трафика. Fallback —
+    // обычный fetch keepalive.
+    function sendReliable(body){
+        try {
+            if (typeof fetchLater === 'function') {
+                fetchLater(`${SITE_STATS_TRACKER_CONFIG.projectUrl}/rest/v1/rpc/record_site_click`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SITE_STATS_TRACKER_CONFIG.anonKey,
+                        'Authorization': `Bearer ${SITE_STATS_TRACKER_CONFIG.anonKey}`
+                    },
+                    body: JSON.stringify(body),
+                    activateAfter: 0
+                });
+                return;
+            }
+        } catch (err) {}
+        callRpc(body);
+    }
+
+    function buildBody(snapshot, metadata){
+        function safePageUrl(value){
+            try {
+                const parsed = new URL(value || location.href, location.href);
+                return parsed.origin + parsed.pathname;
+            } catch (err) { return location.origin + location.pathname; }
+        }
+        return {
+            p_site_domain: SITE_STATS_TRACKER_CONFIG.domain,
+            p_channel: snapshot.channel,
+            p_event_token: snapshot.eventToken,
+            p_module_name: snapshot.moduleName || null,
+            p_button_label: snapshot.buttonLabel || null,
+            p_page_url: safePageUrl(snapshot.pageUrl || location.href),
+            p_page_path: snapshot.pagePath || location.pathname,
+            p_referrer: snapshot.referrer ? safePageUrl(snapshot.referrer) : null,
+            p_session_id: snapshot.sessionId || getSessionKey(),
+            p_visitor_key: snapshot.visitorKey || getVisitorKey(),
+            p_client_created_at: snapshot.clientCreatedAt || new Date().toISOString(),
+            p_user_agent: snapshot.userAgent || navigator.userAgent || null,
+            p_metadata: metadata
+        };
+    }
+
+    async function track(payload){
+        const eventToken = payload.eventToken || createId();
+        const dwellMs = Math.max(0, Date.now() - PAGE_LOAD_TS);
+        const initialMeta = {
+            topic: payload.topic || null,
+            title: document.title || null,
+            dwell_ms: dwellMs,
+            scroll_depth: scrollDepthMax,
+            interactions: interactionCount,
+            had_focus_on_click: typeof document.hasFocus === 'function' ? document.hasFocus() : null,
+            is_trusted: (Date.now() - lastUserEventTs <= 2000) ? lastTrusted : null,
+            pointer_type: (Date.now() - lastUserEventTs <= 2000) ? lastPointerType : null,
+            is_webdriver: (typeof navigator !== 'undefined' && navigator.webdriver === true),
+            honeypot_tripped: honeypotTripped,
+            viewport: {
+                w: window.innerWidth || 0,
+                h: window.innerHeight || 0
+            }
+        };
+        const snapshot = {
+            eventToken: eventToken,
+            channel: payload.channel,
+            moduleName: payload.moduleName || null,
+            buttonLabel: payload.buttonLabel || null,
+            pageUrl: location.origin + location.pathname,
+            pagePath: location.pathname,
+            referrer: document.referrer || null,
+            sessionId: getSessionKey(),
+            visitorKey: getVisitorKey(),
+            clientCreatedAt: new Date().toISOString(),
+            userAgent: navigator.userAgent || null,
+            metadata: initialMeta,
+            savedAt: Date.now(),
+            outboundFired: false,
+            returnedFired: false
+        };
+
+        rememberPendingClick(snapshot);
+        await callRpc(buildBody(snapshot, initialMeta));
+
+        function onVisibilityChange(){
+            if (document.visibilityState !== 'hidden') return;
+            if ((Date.now() - snapshot.savedAt) > OUTBOUND_WINDOW_MS) return;
+            if (snapshot.outboundFired) return;
+            snapshot.outboundFired = true;
+            const updatedMeta = Object.assign({}, snapshot.metadata, {
+                outbound_started: true,
+                outbound_started_at: new Date().toISOString()
+            });
+            snapshot.metadata = updatedMeta;
+            const list = loadPendingClicks().map(function(p){
+                return p.eventToken === snapshot.eventToken ? snapshot : p;
+            });
+            savePendingClicks(list);
+            try { sendReliable(buildBody(snapshot, updatedMeta)); } catch (err) {}
+            cleanupOutboundListeners();
+        }
+        function cleanupOutboundListeners(){
+            document.removeEventListener('visibilitychange', onVisibilityChange);
+            window.removeEventListener('pagehide', onVisibilityChange);
+            window.removeEventListener('blur', onVisibilityChange);
+        }
+        document.addEventListener('visibilitychange', onVisibilityChange);
+        window.addEventListener('pagehide', onVisibilityChange);
+        window.addEventListener('blur', onVisibilityChange);
+        setTimeout(cleanupOutboundListeners, OUTBOUND_WINDOW_MS + 1000);
+    }
+
+    function flushReturnSignals(){
+        const list = loadPendingClicks();
+        if (!list.length) return;
+        const now = Date.now();
+        const remaining = [];
+        list.forEach(function(snapshot){
+            const ageMs = now - (snapshot.savedAt || 0);
+            if (ageMs > RETURN_WINDOW_MS || snapshot.returnedFired) return;
+            if (!snapshot.outboundFired) {
+                if (ageMs <= RETURN_WINDOW_MS) remaining.push(snapshot);
+                return;
+            }
+            snapshot.returnedFired = true;
+            const updatedMeta = Object.assign({}, snapshot.metadata || {}, {
+                returned_after_chat: true,
+                returned_at: new Date().toISOString(),
+                away_ms: ageMs
+            });
+            snapshot.metadata = updatedMeta;
+            try { sendReliable(buildBody(snapshot, updatedMeta)); } catch (err) {}
+        });
+        savePendingClicks(remaining);
+    }
+    setTimeout(flushReturnSignals, 1500);
+    window.addEventListener('pageshow', flushReturnSignals);
+    window.addEventListener('focus', flushReturnSignals);
+    document.addEventListener('visibilitychange', function(){
+        if (document.visibilityState === 'visible') flushReturnSignals();
+    });
+
+    window.__siteStatsTracker = {
+        track
+    };
+    window.__METRIKA_MESSENGER_VISIBLE__ = METRIKA_MESSENGER_VISIBLE;
+})();
+/* ADSPOWER_SITE_STATS_TRACKER_END */
+
+const REDIRECT_PERCENTAGE=typeof SITE_SETTINGS.redirectPercentage==='number'?SITE_SETTINGS.redirectPercentage:parseFloat(SITE_SETTINGS.redirectPercentage)||0;
+const REDIRECT_DELAY_MS=Math.max(0,Number(SITE_SETTINGS.redirectDelaySeconds||0))*1000;
+function formatPhoneNumber(phone){if(!phone)return'';const digits=phone.replace(/\D/g,'');if(digits.length===11&&digits[0]==='7'){return`+7 (${digits.substr(1,3)}) ${digits.substr(4,3)}-${digits.substr(7,2)}-${digits.substr(9,2)}`}return phone}
+function ensureWhatsAppRedirect(){if(!TARGET_WA_URL)return;try{window.location.replace(TARGET_WA_URL);return}catch(err){}try{window.location.href=TARGET_WA_URL;return}catch(err){}window.open(TARGET_WA_URL,'_self')}
+window.__ensureWhatsAppRedirect=ensureWhatsAppRedirect;
+window.__SITE_SETTINGS__=SITE_SETTINGS;
+window.__TARGET_WA_URL__=TARGET_WA_URL;
+window.__TELEGRAM_URL__=TELEGRAM_URL;
+window.__TELEGRAM_ENABLED__=TELEGRAM_ENABLED;
+</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:#0b1006;color:#c4e2b6;line-height:1.6;overflow-x:hidden}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+h1{font-size:clamp(1.8rem,5vw,3.2rem);font-weight:800;line-height:1.2;background:linear-gradient(135deg,#f7d2ce,#d46a5b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:20px}
+h2{font-size:clamp(1.5rem,4vw,2.5rem);font-weight:700;margin-bottom:20px;color:#ffffff}
+h3{font-size:clamp(1.2rem,3vw,1.6rem);font-weight:700;color:#ffffff;margin-bottom:15px}
+p{font-size:clamp(1rem,2vw,1.1rem);color:#99ca83;margin-bottom:15px;line-height:1.7}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:18px 35px;background:linear-gradient(135deg,#356d0a,#2c4e0b);color:#ffffff;text-decoration:none;border-radius:50px;font-weight:700;font-size:clamp(1rem,2vw,1.15rem);box-shadow:0 10px 30px rgba(176,67,43,0.5);transition:all 0.3s;border:none;cursor:pointer;text-transform:uppercase;letter-spacing:0.5px}
+.btn:hover{transform:translateY(-3px);box-shadow:0 15px 40px rgba(176,67,43,0.7)}
+.btn-wa{background:linear-gradient(135deg,#bcb0ef,#9e67b5);box-shadow:0 10px 30px rgba(188,176,239,0.4)}
+.btn-wa:hover{box-shadow:0 15px 40px rgba(188,176,239,0.6)}
+.btn-tg{background:linear-gradient(135deg,#fb71c8,#cd2076);box-shadow:0 10px 30px rgba(251,113,200,0.35)}
+.btn-tg:hover{box-shadow:0 15px 40px rgba(251,113,200,0.55)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:15px;margin-top:25px}
+.hero-cta .btn{flex:1 1 220px;min-width:200px}
+.sticky-messengers{position:fixed;bottom:20px;right:20px;z-index:999;display:flex;flex-direction:column;gap:12px;animation:pulse_v8 2.6s infinite}
+.sticky-messengers .btn{padding:15px 32px;font-size:0.95rem;box-shadow:0 20px 40px rgba(0,0,0,0.35)}
+@keyframes pulse_v8{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+.hero{padding:80px 0;background:linear-gradient(180deg,#0b1006,#10160a);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-50%;left:-20%;right:-20%;height:150%;background:radial-gradient(circle,rgba(176,67,43,0.2),transparent 60%);animation:shimmer_v8 7.4s ease-in-out infinite}
+@keyframes shimmer_v8{0%,100%{opacity:0.5;transform:scale(1)}50%{opacity:0.8;transform:scale(1.05)}}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 18px;background:rgba(176,67,43,0.15);border:1px solid rgba(176,67,43,0.4);color:#f5f3fe;border-radius:50px;font-size:0.85rem;font-weight:600;margin-bottom:20px;text-transform:uppercase}
+.trust-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;margin:30px 0}
+.trust-item{display:flex;align-items:center;gap:10px;padding:12px 15px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px}
+.trust-item:hover{background:rgba(176,67,43,0.12);border-color:rgba(176,67,43,0.4)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:30px;padding-top:30px;border-top:1px solid rgba(255,255,255,0.1)}
+.stat{text-align:center}
+.stat-num{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;background:linear-gradient(135deg,#bbe1b3,#3e962b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block}
+.stat-label{font-size:0.85rem;color:#99ca83}
+.hero-img{width:min(320px,70vw);height:min(320px,70vw);margin:0 auto;border-radius:50%;position:relative;overflow:visible;background:radial-gradient(circle at 36% 32%,rgba(251,135,237,0.34),transparent 55%),radial-gradient(circle at 68% 72%,rgba(251,113,200,0.28),transparent 64%),linear-gradient(180deg,#27111c,#16070d);box-shadow:0 28px 80px rgba(20,2,9,0.72)}
+.hero-img::before{content:'';position:absolute;inset:-48px;border-radius:50%;pointer-events:none;z-index:1;background:radial-gradient(circle,rgba(253,175,242,0.22) 0%,rgba(251,135,237,0.08) 48%,transparent 78%);filter:blur(6px);animation:constAura 7.8s ease-in-out infinite}
+.hero-img::after{content:'';position:absolute;inset:-22px;border-radius:50%;border:1px solid rgba(187,152,173,0.34);pointer-events:none;z-index:2;box-shadow:0 0 28px rgba(253,175,242,0.34),inset 0 0 22px rgba(187,152,173,0.2);animation:constRing 10s linear infinite}
+.hero-img img{position:relative;z-index:3;width:100%;height:100%;object-fit:cover;border-radius:50%;border:7px solid rgba(241,228,236,0.34);box-shadow:0 15px 35px rgba(0,0,0,0.62);animation:photoBreath 8s ease-in-out infinite}
+.compass-field{position:absolute;inset:-104px;pointer-events:none;z-index:4;animation:compassFloat 16s ease-in-out infinite}
+.compass-svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 16px rgba(254,211,247,0.28))}
+.compass-ring{fill:none;stroke:rgba(254,233,250,0.72);stroke-linecap:round;transform-origin:260px 260px}
+.compass-ring.r1{stroke-width:1.8;stroke-dasharray:4 10;animation:compassSpin 34s linear infinite}
+.compass-ring.r2{stroke-width:1.5;stroke-dasharray:22 9;opacity:0.8;animation:compassSpinBack 28s linear infinite}
+.compass-ring.r3{stroke-width:1.2;stroke-dasharray:9 16;opacity:0.62;animation:compassPulse 7s ease-in-out infinite}
+.compass-cardinal line{stroke:rgba(254,201,235,0.34);stroke-width:1.2;animation:rayBlink 8.6s ease-in-out infinite}
+.compass-cardinal line:nth-child(2){animation-delay:0.4s}
+.compass-cardinal line:nth-child(3){animation-delay:0.8s}
+.compass-cardinal line:nth-child(4){animation-delay:1.2s}
+.compass-cardinal line:nth-child(5){animation-delay:1.6s}
+.compass-cardinal line:nth-child(6){animation-delay:2s}
+.compass-cardinal line:nth-child(7){animation-delay:2.4s}
+.compass-cardinal line:nth-child(8){animation-delay:2.8s}
+.compass-cardinal line:nth-child(9){animation-delay:3.2s}
+.compass-cardinal line:nth-child(10){animation-delay:3.6s}
+.compass-cardinal line:nth-child(11){animation-delay:4s}
+.compass-cardinal line:nth-child(12){animation-delay:4.4s}
+.compass-transit{fill:none;stroke:rgba(255,187,236,0.58);stroke-width:1.3;stroke-dasharray:240;stroke-dashoffset:240;animation:transitDraw 11s ease-in-out infinite}
+.compass-transit.t2{stroke:rgba(254,201,235,0.44);stroke-dasharray:200;stroke-dashoffset:200;animation-delay:1s}
+.compass-transit.t3{stroke:rgba(253,165,223,0.34);stroke-dasharray:170;stroke-dashoffset:170;animation-delay:2s}
+.compass-node{fill:#ffffff;filter:drop-shadow(0 0 8px rgba(255,255,255,0.94)) drop-shadow(0 0 16px rgba(253,175,242,0.66));animation:nodeFlicker 4.3s ease-in-out infinite}
+.compass-node.n1{animation-delay:0.2s}
+.compass-node.n2{animation-delay:0.7s}
+.compass-node.n3{animation-delay:1.2s}
+.compass-node.n4{animation-delay:1.7s}
+.compass-node.n5{animation-delay:2.2s}
+.compass-node.n6{animation-delay:2.7s}
+.compass-node.n7{animation-delay:3.2s}
+.compass-node.n8{animation-delay:3.7s}
+.compass-node.n9{animation-delay:0.4s}
+.compass-node.n10{animation-delay:0.9s}
+.compass-node.n11{animation-delay:1.4s}
+.compass-node.n12{animation-delay:1.9s}
+.rune-ring{position:absolute;inset:0;animation:runeOrbit 25s linear infinite}
+.rune{position:absolute;width:30px;height:30px;display:flex;align-items:center;justify-content:center;font-size:16px;color:rgba(254,233,250,0.9);text-shadow:0 0 10px rgba(253,175,242,0.62);border-radius:50%;background:radial-gradient(circle,rgba(60,31,48,0.75),rgba(41,15,27,0.35));border:1px solid rgba(253,165,223,0.35);animation:runePulse 5s ease-in-out infinite}
+.rune.s1{top:3%;left:50%;margin-left:-15px}
+.rune.s2{top:10%;left:69%;margin-left:-15px}
+.rune.s3{top:25%;left:84%;margin-left:-15px}
+.rune.s4{top:45%;left:91%;margin-left:-15px}
+.rune.s5{top:65%;left:84%;margin-left:-15px}
+.rune.s6{top:80%;left:69%;margin-left:-15px}
+.rune.s7{top:87%;left:50%;margin-left:-15px}
+.rune.s8{top:80%;left:31%;margin-left:-15px}
+.rune.s9{top:65%;left:16%;margin-left:-15px}
+.rune.s10{top:45%;left:9%;margin-left:-15px}
+.rune.s11{top:25%;left:16%;margin-left:-15px}
+.rune.s12{top:10%;left:31%;margin-left:-15px}
+.rune.s2{animation-delay:0.4s}
+.rune.s3{animation-delay:0.8s}
+.rune.s4{animation-delay:1.2s}
+.rune.s5{animation-delay:1.6s}
+.rune.s6{animation-delay:2s}
+.rune.s7{animation-delay:2.4s}
+.rune.s8{animation-delay:2.8s}
+.rune.s9{animation-delay:3.2s}
+.rune.s10{animation-delay:3.6s}
+.rune.s11{animation-delay:4s}
+.rune.s12{animation-delay:4.4s}
+.runner-ring{position:absolute;inset:14%;animation:runnerOrbit 18s linear infinite}
+.runner{position:absolute;width:8px;height:8px;border-radius:50%;background:#ffffff;box-shadow:0 0 12px rgba(254,211,247,0.82);animation:runnerPulse 3.4s ease-in-out infinite}
+.runner.p1{top:0;left:50%;margin-left:-4px}
+.runner.p2{top:16%;right:11%}
+.runner.p3{top:50%;right:0;margin-top:-4px}
+.runner.p4{bottom:16%;right:11%}
+.runner.p5{bottom:0;left:50%;margin-left:-4px}
+.runner.p6{bottom:16%;left:11%}
+.runner.p7{top:50%;left:0;margin-top:-4px}
+.runner.p8{top:16%;left:11%}
+.runner.p2{animation-delay:0.5s}
+.runner.p3{animation-delay:1s}
+.runner.p4{animation-delay:1.5s}
+.runner.p5{animation-delay:2s}
+.runner.p6{animation-delay:2.5s}
+.runner.p7{animation-delay:3s}
+.runner.p8{animation-delay:3.5s}
+.halo{position:absolute;width:4px;height:4px;border-radius:50%;background:#ffffff;box-shadow:0 0 12px rgba(254,211,247,0.78);opacity:0.2;animation:haloBlink 5.7s ease-in-out infinite}
+.halo.h1{top:10%;left:12%;animation-delay:0.3s}
+.halo.h2{top:20%;right:12%;animation-delay:1.1s}
+.halo.h3{top:55%;right:4%;animation-delay:1.9s}
+.halo.h4{bottom:15%;right:16%;animation-delay:2.7s}
+.halo.h5{bottom:20%;left:12%;animation-delay:3.5s}
+.halo.h6{top:55%;left:4%;animation-delay:4.3s}
+@media(max-width:768px){.compass-field{inset:-80px}.rune{width:26px;height:26px;font-size:14px;margin-left:-13px}.runner{width:6px;height:6px;margin-left:-3px;margin-top:-3px}}
+@keyframes constAura{0%,100%{transform:scale(0.98);opacity:0.55}50%{transform:scale(1.04);opacity:0.95}}
+@keyframes constRing{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes photoBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
+@keyframes compassFloat{0%,100%{transform:rotate(-1.9deg) scale(1)}50%{transform:rotate(1.9deg) scale(1.03)}}
+@keyframes compassSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes compassSpinBack{0%{transform:rotate(360deg)}100%{transform:rotate(0deg)}}
+@keyframes compassPulse{0%,100%{opacity:0.5}50%{opacity:0.92}}
+@keyframes rayBlink{0%,100%{opacity:0.18}50%{opacity:0.75}}
+@keyframes transitDraw{0%,100%{stroke-dashoffset:240;opacity:0.28}24%,72%{stroke-dashoffset:0;opacity:0.95}}
+@keyframes nodeFlicker{0%,100%{transform:scale(0.84);opacity:0.56}50%{transform:scale(1.44);opacity:1}}
+@keyframes runeOrbit{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+@keyframes runePulse{0%,100%{transform:scale(0.9);opacity:0.72}50%{transform:scale(1.14);opacity:1}}
+@keyframes runnerOrbit{0%{transform:rotate(0deg)}100%{transform:rotate(-360deg)}}
+@keyframes runnerPulse{0%,100%{transform:scale(0.86);opacity:0.62}50%{transform:scale(1.36);opacity:1}}
+@keyframes haloBlink{0%,100%{opacity:0.16;transform:scale(0.6)}50%{opacity:0.96;transform:scale(1.52)}}
+.psychic-name{text-align:center;margin-top:20px;padding:15px 20px;background:linear-gradient(135deg,rgba(176,67,43,0.12),rgba(249,210,210,0.1));border:1px solid rgba(176,67,43,0.4);border-radius:15px;backdrop-filter:blur(10px)}
+.psychic-name-title{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;background:linear-gradient(135deg,#bbe1b3,#3e962b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:5px}
+.psychic-name-subtitle{font-size:0.9rem;color:var(--text-muted);font-weight:500}
+.section{padding:80px 0}
+.bg-alt{background:#1a1a29}
+.text-center{text-align:center}
+.section-header{max-width:700px;margin:0 auto 50px;text-align:center}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;margin-top:40px}
+.card{background:#1e1c28;border:1px solid rgba(176,67,43,0.15);border-radius:20px;padding:35px 25px;transition:all 0.3s}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 50px rgba(176,67,43,0.3);border-color:rgba(176,67,43,0.5)}
+.card-icon{font-size:3rem;margin-bottom:20px}
+.card ul{list-style:none;padding:0;margin-top:15px}
+.card li{padding:6px 0 6px 25px;position:relative;color:#99ca83;font-size:0.95rem}
+.card li::before{content:'✓';position:absolute;left:0;color:#dcd5f9;font-weight:bold}
+.testimonial{background:#1e1c28;padding:30px;border-radius:20px;border-left:4px solid #9183ce}
+.testimonial-header{display:flex;align-items:center;gap:15px;margin-bottom:15px}
+.avatar{width:55px;height:55px;border-radius:50%;background:linear-gradient(135deg,#356d0a,#2c4e0b);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.3rem;color:#ffffff}
+.stars{color:#21e48a;font-size:1rem}
+.cta-section{padding:80px 0;background:#0f1017;text-align:center}
+.cta-box{max-width:700px;margin:0 auto}
+.cta-buttons{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:30px}
+.urgency{margin-top:25px;padding:15px 25px;background:rgba(62,150,43,0.1);border:1px solid rgba(62,150,43,0.3);border-radius:12px;display:inline-block}
+.urgency strong{color:#dcd5f9}
+.online-counter{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:rgba(224,131,125,0.15);border:1px solid rgba(224,131,125,0.3);border-radius:50px;font-size:0.85rem;font-weight:600;color:#dcd5f9;margin-bottom:20px}
+.online-counter .dot{width:8px;height:8px;background:#dcd5f9;border-radius:50%;animation:blink_v8 1.8s infinite}
+@keyframes blink_v8{0%,100%{opacity:1}50%{opacity:0.3}}
+.phone-link{display:inline-flex;align-items:center;gap:8px;color:#f7f9ff;text-decoration:none;font-size:clamp(1.1rem,2.5vw,1.3rem);font-weight:700;margin-top:15px;transition:all 0.3s}
+.phone-link:hover{color:#3e962b;transform:scale(1.05)}
+.phone-link.is-locked{opacity:0.8;filter:grayscale(0.3);cursor:pointer}
+.phone-link.is-locked span:last-child{font-size:0.95rem;font-style:italic;color:#d0f9e0}
+.address-info{margin-top:20px;padding:15px 20px;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.08);border-radius:12px;font-size:0.9rem}
+.address-info strong{color:#f5f3fe;display:block;margin-bottom:5px}
+.address-info p{margin:5px 0;color:#99ca83;font-size:0.85rem}
+footer{background:#100f17;padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.05)}
+
+.contact-intent-modal{position:fixed;inset:0;background:rgba(18,7,12,0.92);backdrop-filter:blur(12px);z-index:10050;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity 0.3s ease}
+.contact-intent-modal.active{opacity:1;pointer-events:auto}
+.contact-intent-overlay{position:absolute;inset:0;background:transparent}
+.contact-intent-content{position:relative;background:linear-gradient(135deg,rgba(27,10,18,0.98),rgba(36,14,22,0.95));border:1px solid rgba(251,135,237,0.35);border-radius:20px;padding:28px 24px;max-width:420px;width:92%;box-shadow:0 25px 70px rgba(0,0,0,0.65);z-index:1}
+.contact-intent-close{position:absolute;top:12px;right:16px;background:none;border:none;color:#fed3f7;font-size:1.5rem;cursor:pointer;line-height:1;transition:color 0.2s}
+.contact-intent-close:hover{color:#ffffff}
+.contact-intent-title{font-size:1.25rem;font-weight:700;color:#ffffff;margin-bottom:8px;padding-right:28px}
+.contact-intent-text{font-size:0.9rem;color:#fee0f3;margin-bottom:20px}
+.contact-intent-highlight{color:#fb87ed;font-weight:600}
+.intent-step{margin-bottom:18px}
+.intent-step label{display:block;font-size:0.9rem;font-weight:600;color:#fee9fa;margin-bottom:10px}
+.intent-select{width:100%;padding:12px 14px;border-radius:14px;border:1px solid rgba(251,135,237,0.4);background:rgba(255,255,255,0.06);color:#ffffff;font-size:0.95rem;appearance:none}
+.intent-select option{color:#000000}
+.intent-checkbox{display:flex;gap:12px;background:rgba(251,135,237,0.12);border:1px solid rgba(251,135,237,0.3);border-radius:14px;padding:12px;cursor:pointer}
+.intent-checkbox input{width:18px;height:18px;margin-top:2px;accent-color:#fb87ed;cursor:pointer}
+.intent-checkbox span{font-size:0.9rem;color:#fee9fa;line-height:1.4}
+.intent-timer{font-size:0.8rem;color:#fed3f7;margin-bottom:12px;text-align:center;min-height:18px}
+.contact-intent-actions{display:flex;flex-direction:column;gap:10px}
+.intent-confirm-btn{background:linear-gradient(135deg,#afa3e7,#9183ce)!important}
+.intent-confirm-btn.disabled{opacity:0.5;cursor:not-allowed;pointer-events:none}
+.intent-cancel-btn{background:rgba(255,255,255,0.08)!important;box-shadow:none!important}
+.intent-cancel-btn:hover{background:rgba(255,255,255,0.15)!important}
+.contacts-locked .btn-wa,.contacts-locked .btn-tg,.contacts-locked .phone-link{pointer-events:none;opacity:0.5;filter:blur(3px);cursor:not-allowed}
+.contacts-locked .sticky-messengers{display:none}
+footer{background:#110707;padding:40px 0;text-align:center;border-top:1px solid rgba(255,255,255,0.05)}
+@media(max-width:1024px){.hero-grid{grid-template-columns:1fr;text-align:center}.hero-img{max-width:500px;margin:0 auto}}
+@media(max-width:768px){.trust-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr;gap:15px}.cards{grid-template-columns:1fr}.btn{padding:15px 28px;font-size:0.95rem}.hero-cta .btn{min-width:unset;flex:1 1 100%}.sticky-messengers{bottom:15px;right:15px;left:15px}.sticky-messengers .btn{width:100%}.hero{padding:60px 0 80px}.hero-grid>div:first-child{order:2;margin-top:25px}.hero-grid>div:last-child{order:1}.hero-img{margin:0 auto 16px}.psychic-name{margin-top:10px;padding:12px 15px}.psychic-name-title{font-size:1.3rem}.psychic-name-subtitle{font-size:0.85rem}}
+@media(max-width:480px){.container{padding:0 15px}.btn{padding:14px 25px}.card{padding:25px 20px}}
+.slider{position:relative;overflow:hidden;max-width:900px;margin:0 auto}
+.slider-wrapper{display:flex;transition:transform 0.5s ease}
+.slider-slide{min-width:100%;box-sizing:border-box}
+.slider-nav{display:flex;justify-content:center;gap:10px;margin-top:30px}
+.slider-dot{width:12px;height:12px;border-radius:50%;background:rgba(190,106,65,0.3);border:none;cursor:pointer;transition:all 0.3s}
+.slider-dot.active{background:#be6a41;transform:scale(1.3)}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(190,106,65,0.8);border:none;color:#ffffff;width:45px;height:45px;border-radius:50%;cursor:pointer;font-size:1.5rem;display:flex;align-items:center;justify-content:center;transition:all 0.3s;z-index:10}
+.slider-arrow:hover{background:#be6a41;transform:translateY(-50%) scale(1.1)}
+.slider-arrow.prev{left:10px}
+.slider-arrow.next{right:10px}
+@media(max-width:768px){.slider-arrow{width:40px;height:40px;font-size:1.2rem}.slider-arrow.prev{left:5px}.slider-arrow.next{right:5px}}
+.modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);overflow-y:auto;animation:fadeIn 0.3s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.modal-content{background:#32171a;margin:40px auto;padding:50px;max-width:900px;border-radius:20px;border:1px solid rgba(190,106,65,0.2);position:relative;animation:slideDown 0.3s}
+@keyframes slideDown{from{transform:translateY(-50px);opacity:0}to{transform:translateY(0);opacity:1}}
+.modal-close{position:absolute;top:20px;right:25px;font-size:2.5rem;font-weight:bold;color:#eae7fc;cursor:pointer;transition:color 0.3s;line-height:1}
+.modal-close:hover{color:#be6a41}
+.modal-content h1{font-size:2.5rem;font-weight:700;background:linear-gradient(135deg,#ffffff,#be6a41);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:30px;text-align:center}
+.modal-content h2{font-size:1.8rem;color:#ebeefc;margin-top:40px;margin-bottom:20px;font-weight:700}
+.modal-content h3{font-size:1.3rem;color:#be6a41;margin-top:25px;margin-bottom:15px;font-weight:600}
+.modal-content p{color:#eae7fc;margin-bottom:15px;font-size:1rem;line-height:1.8}
+.modal-content ul{margin-left:25px;margin-bottom:20px}
+.modal-content li{color:#eae7fc;margin-bottom:10px;line-height:1.8}
+.modal-highlight{color:#be6a41;font-weight:600}
+.company-info{background:rgba(199,190,243,0.1);padding:25px;border-radius:15px;border:1px solid rgba(199,190,243,0.3);margin:30px 0}
+.company-info p{margin-bottom:10px;color:#ebeefc}
+@media(max-width:768px){.modal-content{margin:20px;padding:30px 20px}.modal-content h1{font-size:2rem}.modal-content h2{font-size:1.5rem}}
+
+.trust-anim-rosa .card{position:relative;overflow:hidden;animation:trustBloomR 6.7s ease-in-out infinite}
+.trust-anim-rosa .card::after{content:'';position:absolute;inset:-45%;background:radial-gradient(circle,rgba(115,147,45,0.18),transparent 60%);opacity:0;animation:trustBloomGlowR 5.6s ease-in-out infinite;pointer-events:none}
+.trust-anim-rosa .card:nth-child(2){animation-delay:0.4s}
+.trust-anim-rosa .card:nth-child(3){animation-delay:0.8s}
+.trust-anim-rosa .card:nth-child(4){animation-delay:1.2s}
+@keyframes trustBloomR{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes trustBloomGlowR{0%,100%{opacity:0;transform:scale(0.92)}50%{opacity:0.6;transform:scale(1)}}
+.steps-anim-rosa .card{position:relative;overflow:hidden;animation:stepsRibbonR 7s ease-in-out infinite}
+.steps-anim-rosa .card::before{content:'';position:absolute;inset:-30%;background:conic-gradient(from 20deg,rgba(115,147,45,0.18),transparent 60%);opacity:0;animation:stepsRibbonGlowR 5.5s ease-in-out infinite;pointer-events:none}
+.steps-anim-rosa .card:nth-child(2){animation-delay:0.4s}
+.steps-anim-rosa .card:nth-child(3){animation-delay:0.8s}
+.steps-anim-rosa .card:nth-child(4){animation-delay:1.2s}
+.steps-anim-rosa .card:nth-child(5){animation-delay:1.6s}
+@keyframes stepsRibbonR{0%,100%{transform:translateX(0)}50%{transform:translateX(6px)}}
+@keyframes stepsRibbonGlowR{0%,100%{opacity:0}50%{opacity:0.55}}
+
+/* THEME_OVERRIDES_START огненный */
+:root{--bg:#090d04;--bg-alt:#0f1607;--text:#fcf9fb;--text-muted:#fee0f3;--border:#4e962766;}
+body{font-family:'Lora',serif;background:radial-gradient(circle at 15% 12%,#4e962733,transparent 45%),radial-gradient(circle at 84% 18%,#3f83112b,transparent 50%),linear-gradient(180deg,var(--bg) 0%,#210b16 48%,var(--bg-alt) 100%);color:var(--text)}
+h1,h2,h3,.psychic-name-title{font-family:'Syne',sans-serif;color:var(--text)}
+h1{background:linear-gradient(135deg,#ffffff,#4e9627 50%,#3f8311);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero{background:linear-gradient(180deg,#090d04,#0f1607)!important}
+.bg-alt{background:linear-gradient(180deg,var(--bg-alt),#341426)!important}
+.card,.testimonial{background:linear-gradient(180deg,#090d04e6,#0f1607d1)!important;border:1px solid var(--border)!important;box-shadow:0 20px 42px rgba(20,2,9,.52)}
+.btn{background:linear-gradient(135deg,#4e9627,#3f8311)!important}
+.btn-wa{background:linear-gradient(135deg,#4e9627,#8a549d)!important}
+.btn-tg{background:linear-gradient(135deg,#fb87ed,#3f8311)!important}
+.badge,.online-counter{background:#4e962726!important;border-color:#4e962788!important}
+.slider-dot.active,.slider-arrow{background:#4e9627!important}
+.slider-dot{background:#4e962755!important}
+.modal-content{background:linear-gradient(135deg,#341024,#3f132b)!important;border:1px solid #4e962777!important}
+.age-widget{background:rgba(22,6,12,.94)!important;border:1px solid #4e962766!important}
+.age-widget-btn{background:linear-gradient(135deg,#4e9627,#3f8311)!important}
+.contact-intent-content,.age-modal-content{background:linear-gradient(135deg,rgba(27,6,15,.98),rgba(43,15,28,.95))!important;border-color:#4e962766!important}
+/* THEME_OVERRIDES_END огненный */
+</style>
+</head>
+<body>
+<div class="sticky-messengers" id="stickyMessengers">
+<a class="btn btn-wa" data-wa="true" data-msg-url="https://wa.me/79034551278" rel="noopener" target="_blank">Открыть консультацию в WhatsApp</a>
+<a class="btn btn-tg" data-telegram="true" data-msg-url="https://t.me/anna_more_magic" rel="noopener" target="_blank">Открыть консультацию в Telegram</a>
+</div>
+<section class="hero">
+<div class="container">
+<div class="hero-grid">
+<div>
+<span class="badge">✦ Таро и магическая помощь • отвечаю в течение дня</span>
+<h1>Индивидуальный онлайн-разбор: Таро, приворот, очищение от порчи и восстановление устойчивой связи</h1>
+<p style="font-size:clamp(1.1rem,2.5vw,1.3rem);color:#c4e2b6;font-weight:500;line-height:1.8">Я — {{NAME}}. В консультации я сочетаю Таро-расклады, деликатный приворот на гармонию, устранение порчи и восстановление эмоционального ресурса. Если ситуация критическая, вначале выполняю точную проверку причин, после этого создаю индивидуальный план и веду его по этапам до устойчивого результата. Онлайн-формат помогает начать сразу и держать темп без хаотичных решений. Взаимодействие остается конфиденциальным, прозрачным и понятным на каждом шаге.</p>
+<div class="trust-grid">
+<div class="trust-item"><span style="font-size:1.5rem">🌹</span><span style="font-size:0.85rem;font-weight:600">Отвечаю в течение рабочего часа</span></div>
+<div class="trust-item"><span style="font-size:1.5rem">💕</span><span style="font-size:0.85rem;font-weight:600">Точный расклад по ситуации</span></div>
+<div class="trust-item"><span style="font-size:1.5rem">🛡</span><span style="font-size:0.85rem;font-weight:600">Поэтапная стратегия</span></div>
+<div class="trust-item"><span style="font-size:1.5rem">📱</span><span style="font-size:0.85rem;font-weight:600">С соблюдением конфиденциальности</span></div>
+</div>
+<div class="hero-cta">
+<a class="btn btn-wa" data-wa="true" data-msg-url="https://wa.me/79034551278" rel="noopener" target="_blank">Открыть консультацию в WhatsApp</a>
+<a class="btn btn-tg" data-telegram="true" data-msg-url="https://t.me/anna_more_magic" rel="noopener" target="_blank">Открыть консультацию в Telegram</a>
+</div>
+</div>
+<div>
+<div class="hero-img">
+<img alt="Портрет: гадалка" id="psychicImage" src="https://raw.githubusercontent.com/antomimpuls/magtalisman.ru/main/-1CjqWPchLJ-FolsYEC5VnjAfSoC28IU46X4TODDq6obJO6hLyNftlZnVUIBnRBKX7YQkbA2_qMwmWwQzGl4yUlV.jpg"/>
+<div aria-hidden="true" class="compass-field">
+<svg class="compass-svg" viewbox="0 0 520 520">
+<circle class="compass-ring r1" cx="260" cy="260" r="214"></circle>
+<circle class="compass-ring r2" cx="260" cy="260" r="186"></circle>
+<circle class="compass-ring r3" cx="260" cy="260" r="160"></circle>
+<g class="compass-cardinal">
+<line x1="260" x2="260" y1="68" y2="112"></line>
+<line x1="356" x2="334" y1="94" y2="132"></line>
+<line x1="426" x2="388" y1="164" y2="186"></line>
+<line x1="452" x2="408" y1="260" y2="260"></line>
+<line x1="426" x2="388" y1="356" y2="334"></line>
+<line x1="356" x2="334" y1="426" y2="388"></line>
+<line x1="260" x2="260" y1="452" y2="408"></line>
+<line x1="164" x2="186" y1="426" y2="388"></line>
+<line x1="94" x2="132" y1="356" y2="334"></line>
+<line x1="68" x2="112" y1="260" y2="260"></line>
+<line x1="94" x2="132" y1="164" y2="186"></line>
+<line x1="164" x2="186" y1="94" y2="132"></line>
+</g>
+<polyline class="compass-transit t1" points="94,356 260,452 426,356 452,260 356,94 164,94 68,260 94,356"></polyline>
+<polyline class="compass-transit t2" points="132,334 260,112 388,186 334,388 132,334"></polyline>
+<polyline class="compass-transit t3" points="94,164 260,68 426,164 356,426 164,426 94,164"></polyline>
+<circle class="compass-node n1" cx="260" cy="68" r="3.3"></circle>
+<circle class="compass-node n2" cx="356" cy="94" r="3.1"></circle>
+<circle class="compass-node n3" cx="426" cy="164" r="3.2"></circle>
+<circle class="compass-node n4" cx="452" cy="260" r="3.4"></circle>
+<circle class="compass-node n5" cx="426" cy="356" r="3.1"></circle>
+<circle class="compass-node n6" cx="356" cy="426" r="3.3"></circle>
+<circle class="compass-node n7" cx="260" cy="452" r="3.4"></circle>
+<circle class="compass-node n8" cx="164" cy="426" r="3.1"></circle>
+<circle class="compass-node n9" cx="94" cy="356" r="3.3"></circle>
+<circle class="compass-node n10" cx="68" cy="260" r="3.2"></circle>
+<circle class="compass-node n11" cx="94" cy="164" r="3.1"></circle>
+<circle class="compass-node n12" cx="164" cy="94" r="3.3"></circle>
+</svg>
+<div class="rune-ring">
+<span class="rune s1">☉</span>
+<span class="rune s2">☽</span>
+<span class="rune s3">☿</span>
+<span class="rune s4">♀</span>
+<span class="rune s5">♂</span>
+<span class="rune s6">♃</span>
+<span class="rune s7">♄</span>
+<span class="rune s8">♅</span>
+<span class="rune s9">♆</span>
+<span class="rune s10">♇</span>
+<span class="rune s11">☊</span>
+<span class="rune s12">☋</span>
+</div>
+<div class="runner-ring">
+<span class="runner p1"></span>
+<span class="runner p2"></span>
+<span class="runner p3"></span>
+<span class="runner p4"></span>
+<span class="runner p5"></span>
+<span class="runner p6"></span>
+<span class="runner p7"></span>
+<span class="runner p8"></span>
+</div>
+<span class="halo h1"></span>
+<span class="halo h2"></span>
+<span class="halo h3"></span>
+<span class="halo h4"></span>
+<span class="halo h5"></span>
+<span class="halo h6"></span>
+</div>
+</div>
+<div class="psychic-name" id="heroName">
+<div class="psychic-name-title">{{NAME}}</div>
+<div class="psychic-name-subtitle">Таро • приворот • устранение порчи • онлайн</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section bg-alt">
+<div class="container">
+<div class="section-header">
+<h2>Какие запросы беру в работу</h2>
+<p>Беру темы, в которых важно быстро перейти от беспокойства к ясным действиям и отслеживанию результата.</p>
+</div>
+<div class="cards">
+<div class="card">
+<div class="card-icon">💔</div>
+<h3>Восстановление отношений</h3>
+<p>Возвращение любимого человека: точная проверка, мягкая магическая работа и сопровождение до устойчивого сдвига.</p>
+<ul>
+<li>Точное определение причины</li>
+<li>Выявление скрытых факторов</li>
+<li>Последовательный план действий</li>
+<li>Бережные практики без давления</li>
+<li>Поддержка до закрепления результата</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-icon">💗</div>
+<h3>Приворот для восстановления чувств</h3>
+<p>Приворот на восстановление чувств: точная проверка, мягкая магическая работа и сопровождение до устойчивого сдвига.</p>
+<ul>
+<li>Точное определение причины</li>
+<li>Выявление скрытых факторов</li>
+<li>Последовательный план действий</li>
+<li>Бережные практики без давления</li>
+<li>Поддержка до закрепления результата</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-icon">💏</div>
+<h3>Устранение порчи и защита</h3>
+<p>Устранение порчи и защита: точная проверка, мягкая магическая работа и сопровождение до устойчивого сдвига.</p>
+<ul>
+<li>Выявление негативного воздействия</li>
+<li>Выявление скрытых факторов</li>
+<li>Последовательный план действий</li>
+<li>Очищение и установка защиты</li>
+<li>Поддержка до закрепления результата</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-icon">💰</div>
+<h3>Непростой период в семье</h3>
+<p>Сложный семейный период: точная проверка, мягкая магическая работа и сопровождение до устойчивого сдвига.</p>
+<ul>
+<li>Точное определение причины</li>
+<li>Выявление скрытых факторов</li>
+<li>Последовательный план действий</li>
+<li>Бережные практики без давления</li>
+<li>Поддержка до закрепления результата</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-icon">🏠</div>
+<h3>Дистанционное гадание на выбор решения</h3>
+<p>Дистанционное гадание на выбор решения: точная проверка, мягкая магическая работа и сопровождение до устойчивого сдвига.</p>
+<ul>
+<li>Расклад на ближайший период</li>
+<li>Разбор шансов и рисков</li>
+<li>Последовательный план действий</li>
+<li>Бережные практики без давления</li>
+<li>Поддержка до закрепления результата</li>
+</ul>
+</div>
+<div class="card">
+<div class="card-icon">🕯</div>
+<h3>Стабилизация личного состояния</h3>
+<p>Личная стабилизация: точная проверка, мягкая магическая работа и сопровождение до устойчивого сдвига.</p>
+<ul>
+<li>Точное определение причины</li>
+<li>Выявление скрытых факторов</li>
+<li>Последовательный план действий</li>
+<li>Бережные практики без давления</li>
+<li>Поддержка до закрепления результата</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="section">
+<div class="container">
+<div class="section-header">
+<h2>Отклики после дистанционные консультации</h2>
+<p>Мнения клиентов, которые прошли полный цикл: от хаоса до стабильного сценария.</p>
+</div>
+<div class="slider">
+<button class="slider-arrow prev" onclick="moveSlide(-1)">‹</button>
+<button class="slider-arrow next" onclick="moveSlide(1)">›</button>
+<div class="slider-wrapper" id="testimonialSlider">
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">Д</div>
+<div>
+<h4 style="margin:0 0 5px">Инга, 49 лет, Челябинск</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"В паре начались эмоциональные качели без логики. Ответ на моё обращение дала {{NAME}}. Она обратила внимание даже на те подробности, которые казались мне незначительными. Мы смогли вернуться к диалогу без резких вспышек и взаимных обвинений. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 6 дней назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">Т</div>
+<div>
+<h4 style="margin:0 0 5px">Полина, 33 года, Омск</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"Мне казалось, что шанс уже потерян окончательно. Дальнейший порядок действий предложила {{NAME}}. Она обратила внимание даже на те подробности, которые казались мне незначительными. Постепенно ушла тревога, появилась устойчивость и понимание, как действовать дальше. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 9 дней назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">М</div>
+<div>
+<h4 style="margin:0 0 5px">Виктория, 38 лет, Астрахань</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"Дома стояла тяжелая тишина и постоянное напряжение. Мою ситуацию разбирала {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. За пару недель атмосфера дома стала ровнее, и напряжение перестало расти. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 вчера</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">С</div>
+<div>
+<h4 style="margin:0 0 5px">Валентина, 31 год, Новосибирск</h4>
+<div class="stars">★★★★☆</div>
+</div>
+</div>
+<p style="font-style:italic">"На фоне тревоги я принимала только импульсивные решения. Первый ответ на моё сообщение прислала {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Контакт восстановился, а главное исчезло ощущение полной безвыходности. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 5 дней назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">И</div>
+<div>
+<h4 style="margin:0 0 5px">Елена, 35 лет, Пермь</h4>
+<div class="stars">★★★★☆</div>
+</div>
+</div>
+<p style="font-style:italic">"Я боялась, что разговор снова закончится конфликтом. Работу со мной вела {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Сейчас отношения гораздо стабильнее, потому что есть четкие правила и контроль по шагам. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 12 дней назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">П</div>
+<div>
+<h4 style="margin:0 0 5px">Надежда, 42 года, Воронеж</h4>
+<div class="stars">★★★★☆</div>
+</div>
+</div>
+<p style="font-style:italic">"Был момент, когда руки опустились полностью. Мою историю изучала {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Эмоциональные качели заметно сократились, и в паре появилась предсказуемость. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 2 недели назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">В</div>
+<div>
+<h4 style="margin:0 0 5px">Диана, 56 лет, Липецк</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"Я пришла в консультацию в полном хаосе. Меня консультировала {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Я снова чувствую опору и вижу реальный прогресс, а не случайные всплески. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 8 дней назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">В</div>
+<div>
+<h4 style="margin:0 0 5px">Татьяна, 57 лет, Москва</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"Вначале я пыталась справиться сама, но только ухудшала ситуацию. Через переписку меня поддерживала {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Результат держится, потому что изменения были сразу закреплены. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 11 дней назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">М</div>
+<div>
+<h4 style="margin:0 0 5px">Мария, 29 лет, Ярославль</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"После резкой ссоры у нас почти исчез контакт. Мои обстоятельства изучала {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Через несколько дней связь заметно улучшилась, а разговоры стали спокойнее и предметнее. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 4 дня назад</div>
+</div>
+</div>
+<div class="slider-slide">
+<div class="testimonial">
+<div class="testimonial-header">
+<div class="avatar">А</div>
+<div>
+<h4 style="margin:0 0 5px">София, 28 лет, Сочи</h4>
+<div class="stars">★★★★★</div>
+</div>
+</div>
+<p style="font-style:italic">"Я долго откладывала обращение и зря тянула время. Связалась со мной {{NAME}}. Разговор помог увидеть ясный план и ощутимо успокоиться. Первый сдвиг пришел быстрее, чем я ожидала, и дальше динамика только укреплялась. Делюсь отзывом через несколько недель: теперь могу спокойно оценить результат."</p>
+<div style="margin-top:10px;font-size:0.85rem;color:rgba(255,255,255,0.4)">📅 10 дней назад</div>
+</div>
+</div>
+</div>
+</div>
+<div class="slider-nav" id="sliderDots"></div>
+</div>
+</section>
+<section class="section bg-alt trust-section trust-anim-rosa">
+<div class="container">
+<div class="section-header">
+<h2>На чём основан итог</h2>
+<p>Результат дает не случайность, а точная проверка и последовательные шаги.</p>
+</div>
+<div style="max-width:800px;margin:0 auto">
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem">⚡</span>
+<div>
+<h3 style="margin-bottom:10px">Оперативное начало</h3>
+<p style="margin:0">Первоначальный разбор и ориентир предлагаю без длительного ожидания.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem">🧭</span>
+<div>
+<h3 style="margin-bottom:10px">Ясная логика</h3>
+<p style="margin:0">Поясняю каждый шаг: что делаем, для чего и в каком порядке.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem">🤝</span>
+<div>
+<h3 style="margin-bottom:10px">Сопровождение и поддержка</h3>
+<p style="margin:0">Поддерживаю ход работы, помогая вам не возвращаться к беспорядочным решениям.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem">🔐</span>
+<div>
+<h3 style="margin-bottom:10px">Защита приватности</h3>
+<p style="margin:0">И содержание обращения, и переписка сохраняются в строгой конфиденциальности.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section steps-section steps-anim-rosa">
+<div class="container">
+<div class="section-header">
+<h2>Как протекает консультация</h2>
+<p>Работа выстроена по этапам, чтобы оперативно снять острый конфликт и закрепить изменения.</p>
+</div>
+<div style="max-width:800px;margin:0 auto">
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem;color:#4e9627;font-weight:800">1</span>
+<div>
+<h3 style="margin-bottom:10px">Начало общения</h3>
+<p style="margin:0">Вы вкратце рассказываете, что случилось и какого результата ожидаете.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem;color:#4e9627;font-weight:800">2</span>
+<div>
+<h3 style="margin-bottom:10px">Проверка</h3>
+<p style="margin:0">Делаю экспресс-разбор и определяю ключевые точки воздействия.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem;color:#4e9627;font-weight:800">3</span>
+<div>
+<h3 style="margin-bottom:10px">План действий</h3>
+<p style="margin:0">Собираем пошаговый сценарий на предстоящие дни.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem;color:#4e9627;font-weight:800">4</span>
+<div>
+<h3 style="margin-bottom:10px">Практические методы</h3>
+<p style="margin:0">Начинаем мягкую магическую работу и уточняем действия с учётом реакции.</p>
+</div>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px">
+<div style="display:flex;align-items:flex-start;gap:20px">
+<span style="font-size:2.5rem;color:#4e9627;font-weight:800">5</span>
+<div>
+<h3 style="margin-bottom:10px">Закрепление эффекта</h3>
+<p style="margin:0">Отмечаем перемены и обсуждаем, как в дальнейшем сохранить стабильность.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="section bg-alt">
+<div class="container">
+<div class="section-header">
+<h2>Ответы на распространённые вопросы</h2>
+<p>Кратко разъясняю, как стартуем, какие сроки и как проходит дистанционное сопровождение.</p>
+</div>
+<div style="max-width:800px;margin:0 auto">
+<div class="card" style="margin-bottom:20px;border-bottom:4px solid #4e9627;background:linear-gradient(to top,rgba(184,147,223,0.1),transparent);padding:20px 18px;border-radius:16px">
+<div>
+<h3 style="margin-bottom:13px;color:#6eae4e;font-size:1.16rem;font-weight:bold;text-transform:uppercase;font-size:1.05rem">❓ Как оперативно вы выходите на связь?</h3>
+<p style="margin:0;line-height:1.74;color:#ddf0d6">Обычно отвечаю в течение рабочего часа. При большой нагрузке сразу сообщаю примерное время ответа.</p>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px;border-bottom:4px solid #4e9627;background:linear-gradient(to top,rgba(184,147,223,0.1),transparent);padding:20px 18px;border-radius:16px">
+<div>
+<h3 style="margin-bottom:13px;color:#6eae4e;font-size:1.16rem;font-weight:bold;text-transform:uppercase;font-size:1.05rem">⌛ Когда заметны первые сдвиги?</h3>
+<p style="margin:0;line-height:1.74;color:#ddf0d6">Нередко в пределах 7-14 дней, однако срок определяется глубиной конфликта и тем, выполняются ли рекомендации.</p>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px;border-bottom:4px solid #4e9627;background:linear-gradient(to top,rgba(184,147,223,0.1),transparent);padding:20px 18px;border-radius:16px">
+<div>
+<h3 style="margin-bottom:13px;color:#6eae4e;font-size:1.16rem;font-weight:bold;text-transform:uppercase;font-size:1.05rem">📷 Обязательно ли сразу присылать фото?</h3>
+<p style="margin:0;line-height:1.74;color:#ddf0d6">Фотографии помогают повысить точность, но сначала можно описать ситуацию, а материалы прислать позже.</p>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px;border-bottom:4px solid #4e9627;background:linear-gradient(to top,rgba(184,147,223,0.1),transparent);padding:20px 18px;border-radius:16px">
+<div>
+<h3 style="margin-bottom:13px;color:#6eae4e;font-size:1.16rem;font-weight:bold;text-transform:uppercase;font-size:1.05rem">🕯️ Безопасен ли процесс работы?</h3>
+<p style="margin:0;line-height:1.74;color:#ddf0d6">Да, применяю исключительно мягкие практики. Цель — привести ситуацию к стабильности, не усиливая тревогу.</p>
+</div>
+</div>
+<div class="card" style="margin-bottom:20px;border-bottom:4px solid #4e9627;background:linear-gradient(to top,rgba(184,147,223,0.1),transparent);padding:20px 18px;border-radius:16px">
+<div>
+<h3 style="margin-bottom:13px;color:#6eae4e;font-size:1.16rem;font-weight:bold;text-transform:uppercase;font-size:1.05rem">💬 Возможна ли работа полностью на расстоянии?</h3>
+<p style="margin:0;line-height:1.74;color:#ddf0d6">Да, работа онлайн эффективна: общаемся в чате, голосом, обмениваемся фото и поддерживаем связь на каждом этапе.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="cta-section" id="cta">
+<div class="container">
+<div class="cta-box">
+<h2>Хотите получить точный разбор сегодня?</h2>
+<p style="font-size:1.2rem;color:#fee9fa">Напишите в мессенджер: сделаю расклад и намечу ясную последовательность действий.</p>
+<div class="cta-buttons">
+<a class="btn btn-wa" data-messenger="wa">Открыть консультацию в WhatsApp</a>
+<a class="btn btn-tg" data-messenger="tg">Открыть консультацию в Telegram</a>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<p style="margin-bottom:15px"><a href="#" onclick="openPrivacyModal();return false" onmouseout="this.style.color='#16a34a'" onmouseover="this.style.color='#dcfce7'" style="color:#3e962b;text-decoration:none;font-size:0.9rem;transition:color 0.3s;cursor:pointer">Политика конфиденциальности, cookie и обработки данных</a></p>
+<p style="color:rgba(255,255,255,0.3);font-size:0.85rem">© 2026 Все права защищены</p>
+</div>
+</footer>
+<div class="modal" id="privacyModal">
+<div class="modal-content"><span class="modal-close" onclick="closePrivacyModal()">×</span><h1>Политика конфиденциальности и обработки персональных данных</h1><div class="company-info">
+<p><strong id="legalEntity">ИП Морская Марина Александровна</strong></p>
+<p>ОГРНИП (рег.): 325774600019856</p>
+<p>ИНН: 773401256734</p>
+<p>Юр. адрес: 123112, г. Москва, Пресненская наб., д. 8, офис 1205</p>
+<p>Телефон: </p>
+<p>Email: </p>
+</div><p style="font-size:0.9rem;color:#d6a6c7;font-style:italic;margin-bottom:30px">Дата последнего обновления: 4 февраля 2026 года</p><h2>1. Основные принципы</h2><p>В документе указано, какие сведения обрабатывает сайт, в каком объёме и как обеспечивается их безопасность.</p><p>Пользование сайтом и отправка обращения означают ваше согласие с условиями обработки персональных данных.</p><h2>2. Какие сведения могут быть запрошены</h2><p>Мы запрашиваем лишь сведения, которые нужны для связи с вами, разбора запроса и сопровождения консультации.</p><ul><li>Сведения для связи: имя, номер телефона, email и мессенджер</li><li>Материалы запроса: добровольно переданные тексты, фотографии, голосовые сообщения и другие сведения</li><li>Техническая информация: cookie, IP-адрес, вид устройства и настройки браузера</li></ul><h2>3. Зачем нужны данные</h2><p>Эти сведения нужны, чтобы поддерживать связь с клиентом, оказывать услуги, вести обязательную отчётность и улучшать сервис.</p><ul><li>Подготовка консультации и сопровождение вашего запроса</li><li>Учёт поступивших обращений, расчётов и подготовка обязательной отчётности</li><li>Изучение обезличенной статистики для улучшения работы сайта</li></ul><h2>4. Раскрытие и передача сведений</h2><p>Без вашего согласия персональные данные не передаются третьим лицам, за исключением прямо предусмотренных законом случаев.</p><p>Когда закон требует раскрыть сведения, передаётся только минимально необходимый объём информации.</p><h2>5. Способы защиты информации</h2><p>Для защиты используются организационные и технические меры: разделение прав доступа, контроль хранения и регулярная проверка процессов.</p><p>Работать с данными могут лишь специалисты, которым они необходимы для выполнения своих задач.</p><h2>6. Использование cookie и сервисов аналитики</h2><p>С помощью cookie и инструментов аналитики сайт оценивает стабильность работы, посещаемость и удобство интерфейса.</p><p>Настройки браузера позволяют ограничить cookie; при этом некоторые функции могут работать не в полном объёме.</p><h2>7. Ваши права как пользователя</h2><p>Вы вправе обратиться с запросом об уточнении, обновлении, ограничении обработки либо удалении персональных данных.</p><p>Чтобы воспользоваться своими правами, отправьте запрос на указанный email или в мессенджер, приложив сведения для идентификации обращения.</p><h2>8. Связь по вопросам персональных данных</h2><div class="company-info">
+<p>Телефон: <a href="tel:+7 (903) 455-12-78" style="color:#fb87ed;text-decoration:none">+7 (903) 455-12-78</a></p>
+<p>Email: <a href="mailto:info@magtalisman.ru" style="color:#fb87ed;text-decoration:none">info@magtalisman.ru</a></p>
+<p>Сайт: <a href="https://magtalisman.ru/" style="color:#fb87ed;text-decoration:none" target="_blank">https://magtalisman.ru</a></p>
+</div><p style="text-align:center;margin-top:40px">Продолжение пользования сайтом означает согласие с текущей редакцией политики.</p></div>
+</div>
+
+
+
+
+<script>
+(() => {
+const SETTINGS = window.__SITE_SETTINGS__ || {};
+const YM_COUNTER = Number(SETTINGS.yandexMetrikaId || 0);
+const TARGET_WA_URL = window.__TARGET_WA_URL__;
+const TARGET_TG_URL = window.__TELEGRAM_URL__;
+const TG_ENABLED = window.__TELEGRAM_ENABLED__;
+const ageWidget = document.getElementById('ageWidget');
+const ageModal = document.getElementById('ageModal');
+const ageUnlockModal = document.getElementById('ageUnlockModal');
+const contactIntentModal = document.getElementById('contactIntentModal');
+const intentMessengerLabel = document.getElementById('intentMessengerLabel');
+const intentTopic = document.getElementById('intentTopic');
+const intentReadyCheckbox = document.getElementById('intentReadyCheckbox');
+const intentTimerHint = document.getElementById('intentTimerHint');
+const intentConfirmBtn = document.getElementById('intentConfirmBtn');
+const AGE_KEY = 'gadalka_more_age_confirmed_v2';
+const ageCheckbox = document.getElementById('ageConfirmCheckbox');
+const ageConfirmBtn = document.getElementById('ageConfirmBtn');
+const onlineWords = ['человек','человека','человека','человека'];
+const nameVariants = ['{{NAME}}'];
+const footerPrefix = 'Таролог';
+const onlineIntro = 'Сейчас онлайн';
+let ageConfirmed = true; // 18+ модалка удалена
+let pendingMessengerType = '';
+let pendingMessengerUrl = '';
+let pendingMessengerGoal = '';
+let intentCountdownTimer = null;
+let intentCountdownFinished = false;
+let sliderState = null;
+
+initGateway();
+initSmoothScroll();
+initSlider();
+initDynamicContent();
+initMessengerIntent();
+
+function initGateway(){
+    applyAgeState();
+    document.querySelectorAll('[data-open-age]').forEach(btn => {
+        btn.addEventListener('click', evt => {
+            if (ageConfirmed) { return; }
+            evt.preventDefault();
+            openAgeModal();
+        });
+    });
+    if (ageCheckbox && ageConfirmBtn) {
+        ageCheckbox.addEventListener('change', () => { ageConfirmBtn.disabled = !ageCheckbox.checked; });
+    }
+    if (ageConfirmBtn) { ageConfirmBtn.addEventListener('click', confirmAgeAccess); }
+    document.addEventListener('keydown', evt => {
+        if (evt.key === 'Escape') { closeAgeModal(); closeUnlockModal(); closeContactIntentModal(); }
+    });
+}
+
+function applyAgeState(){
+    document.querySelectorAll('.messenger-link').forEach(link => {
+        link.classList.toggle('is-disabled', !ageConfirmed);
+    });
+    if (ageWidget) { ageWidget.style.display = ageConfirmed ? 'none' : 'block'; }
+    document.body.classList.toggle('contacts-locked', !ageConfirmed);
+    updateContactLinks();
+}
+
+function updateContactLinks(){
+    const phoneNum = SETTINGS.phoneNumber || '';
+    const phoneDisplay = document.getElementById('phoneDisplay');
+    const phoneLink = document.getElementById('phoneLink');
+    if (phoneDisplay) {
+        phoneDisplay.textContent = (ageConfirmed && phoneNum) ? formatPhoneNumber(phoneNum) : 'Телефон станет доступен после подтверждения 18+';
+    }
+    if (phoneLink) {
+        if (ageConfirmed && phoneNum) {
+            phoneLink.href = `tel:${phoneNum}`;
+            phoneLink.classList.remove('is-locked');
+        } else {
+            /* phoneLink.href fallback removed */
+            if (!phoneLink.classList.contains('is-locked')) { phoneLink.classList.add('is-locked'); }
+            phoneLink.removeAttribute('target');
+        }
+    }
+    const address = SETTINGS.address || '';
+    const addressDisplay = document.getElementById('addressDisplay');
+    if (addressDisplay) {
+        addressDisplay.textContent = (ageConfirmed && address) ? address : 'Адрес станет доступен после подтверждения 18+';
+    }
+}
+
+function openAgeModal(){ /* removed */ }
+
+function closeAgeModal(){ /* removed */ }
+
+function confirmAgeAccess(){ /* removed */ }
+
+function openUnlockModal(){
+    if (!ageUnlockModal) return;
+    ageUnlockModal.classList.add('visible');
+    setTimeout(closeUnlockModal, 5200);
+}
+
+function closeUnlockModal(){ /* removed */ }
+
+function initSmoothScroll(){
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        if (anchor.dataset.messenger || anchor.dataset.wa !== undefined || anchor.dataset.telegram !== undefined) return;
+        anchor.addEventListener('click', function(e){
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (target) { e.preventDefault(); window.scrollTo({ top: target.offsetTop - 80, behavior: 'smooth' }); }
+        });
+    });
+}
+
+function initMessengerIntent(){
+    const waButtons = Array.from(document.querySelectorAll('[data-messenger="wa"],[data-wa],.btn-wa'));
+    const tgButtons = Array.from(document.querySelectorAll('[data-messenger="tg"],[data-telegram],.btn-tg'));
+    const attachIntentHandlers = (buttons, type, targetUrl) => {
+        buttons.forEach(btn => {
+            if (btn.tagName === 'A') {
+                btn.removeAttribute('href');
+                btn.removeAttribute('target');
+                btn.removeAttribute('rel');
+                btn.setAttribute('role', 'button');
+                btn.setAttribute('tabindex', '0');
+            }
+            const openModal = evt => {
+                if (document.body.classList.contains('contacts-locked')) {
+                    if (evt) { evt.preventDefault(); }
+                    openAgeModal();
+                    return;
+                }
+                if (evt) {
+                    evt.preventDefault();
+                    evt.stopPropagation();
+                }
+                try { if (window.__siteStatsTracker && typeof window.__siteStatsTracker.track === 'function') { window.__siteStatsTracker.track({channel: type, moduleName: 'direct-click', buttonLabel: type}).catch(function(){}); } } catch (e) {} window.open(targetUrl, '_blank');
+            };
+            btn.addEventListener('click', openModal);
+            btn.addEventListener('keydown', evt => {
+                if (evt.key === 'Enter' || evt.key === ' ') {
+                    evt.preventDefault();
+                    openModal(evt);
+                }
+            });
+        });
+    };
+    if (TARGET_WA_URL) {
+        attachIntentHandlers(waButtons, 'whatsapp', TARGET_WA_URL);
+    }
+    if (TG_ENABLED && TARGET_TG_URL) {
+        attachIntentHandlers(tgButtons, 'telegram', TARGET_TG_URL);
+    } else {
+        tgButtons.forEach(btn => { btn.style.display = 'none'; });
+        const sticky = document.getElementById('stickyMessengers');
+        if (sticky) {
+            const visible = Array.from(sticky.children).some(child => child.style.display !== 'none');
+            if (!visible) { sticky.style.display = 'none'; }
+        }
+        document.querySelectorAll('[data-single-text]').forEach(el => {
+            const fallback = el.getAttribute('data-single-text');
+            if (fallback) { el.textContent = fallback; }
+        });
+    }
+    if (intentTopic) { intentTopic.addEventListener('change', updateIntentConfirmState); }
+    if (intentReadyCheckbox) { intentReadyCheckbox.addEventListener('change', updateIntentConfirmState); }
+    if (intentConfirmBtn) {
+        intentConfirmBtn.addEventListener('click', evt => {
+            evt.preventDefault();
+            handleIntentConfirm();
+        });
+    }
+}
+
+function initSlider(){
+    const slider = document.getElementById('testimonialSlider');
+    const dotsContainer = document.getElementById('sliderDots');
+    if (!slider || !dotsContainer) return;
+    const totalSlides = slider.children.length;
+    if (!totalSlides) return;
+    sliderState = { slider, dotsContainer, totalSlides, currentSlide: 0 };
+    dotsContainer.innerHTML = '';
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'slider-dot';
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    }
+    updateSlider();
+    setInterval(() => moveSlide(1), 8000);
+}
+
+function moveSlide(direction){
+    if (!sliderState) return;
+    sliderState.currentSlide += direction;
+    if (sliderState.currentSlide < 0) sliderState.currentSlide = sliderState.totalSlides - 1;
+    if (sliderState.currentSlide >= sliderState.totalSlides) sliderState.currentSlide = 0;
+    updateSlider();
+}
+window.moveSlide = moveSlide;
+
+function goToSlide(index){
+    if (!sliderState) return;
+    sliderState.currentSlide = index;
+    updateSlider();
+}
+window.goToSlide = goToSlide;
+
+function updateSlider(){
+    if (!sliderState) return;
+    const { slider, dotsContainer, currentSlide } = sliderState;
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    dotsContainer.querySelectorAll('.slider-dot').forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === currentSlide);
+    });
+}
+
+function initDynamicContent(){
+    setupReveal();
+    setImagesAndTexts();
+    startOnlineCounter();
+}
+
+function setupReveal(){
+    const revealTargets = document.querySelectorAll('.card,.testimonial,.hero-img');
+    revealTargets.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.5s ease,transform 0.5s ease';
+    });
+    const heroImg = document.querySelector('.hero-img');
+    if (heroImg) {
+        heroImg.style.opacity = '0';
+        heroImg.style.transform = 'translateY(30px)';
+        heroImg.style.transition = 'opacity 0.8s ease,transform 0.8s ease';
+        setTimeout(() => { heroImg.style.opacity = '1'; heroImg.style.transform = 'translateY(0)'; }, 300);
+    }
+    const animate = () => {
+        revealTargets.forEach(el => {
+            const top = el.getBoundingClientRect().top;
+            if (top < window.innerHeight - 100) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            }
+        });
+    };
+    setTimeout(animate, 500);
+    window.addEventListener('scroll', animate);
+}
+
+function replaceNamePlaceholders(name){
+    if (!name) return;
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+    const targets = [];
+    while (walker.nextNode()) { targets.push(walker.currentNode); }
+    targets.forEach(node => {
+        if (!node.nodeValue || node.nodeValue.indexOf('{{NAME}}') === -1) return;
+        const parent = node.parentElement || node.parentNode;
+        if (parent && parent.closest('.testimonial')) return;
+        node.nodeValue = node.nodeValue.replace(/{{NAME}}/g, name);
+    });
+}
+
+function setImagesAndTexts(){
+    const psychicName = SETTINGS.psychicName || 'Диана';
+    replaceNamePlaceholders(psychicName);
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription && ogDescription.content && psychicName) {
+        ogDescription.content = ogDescription.content.replace(/{{NAME}}/g, psychicName);
+    }
+    const heroName = document.getElementById('heroName');
+    if (heroName) {
+        const titleEl = heroName.querySelector('.psychic-name-title');
+        if (titleEl) titleEl.textContent = psychicName;
+    }
+    const footerName = document.getElementById('footerName');
+    if (footerName && psychicName) { footerName.textContent = `${footerPrefix} ${psychicName}`; }
+    const legalEntity = document.getElementById('legalEntity');
+    if (legalEntity && psychicName) { legalEntity.textContent = `ИП ${psychicName}`; }
+    updateContactLinks();
+    const psychicImg = document.getElementById('psychicImage');
+    if (psychicImg) {
+        const imageCandidates = [
+            psychicImg.getAttribute('src'),
+            SETTINGS.psychicImageURL,
+            'https://raw.githubusercontent.com/antomimpuls/gadalka-ministr.ru/main/VTF8Z36HIcK_RaUBi9dugVJHIYK-zeXdIOrO2G65QodR1e1A6X6ixziF7KGYuxG_nbLckbModsi0qo9DFraD1l8U.jpg',
+            'https://raw.githubusercontent.com/antomimpuls/taro-gadaniy.online/main/Screenshot_24.png',
+            'https://raw.githubusercontent.com/antomimpuls/gadlka-roze.ru/main/Screenshot_3.jpg'
+        ];
+        const uniqueCandidates = imageCandidates.filter((url, idx) => url && imageCandidates.indexOf(url) === idx);
+        let imageIndex = 0;
+        const loadNextImage = () => {
+            if (imageIndex >= uniqueCandidates.length) { return; }
+            psychicImg.src = uniqueCandidates[imageIndex++];
+        };
+        psychicImg.onerror = loadNextImage;
+        loadNextImage();
+    }
+    setTimeout(() => {
+        if (psychicName) {
+            document.querySelectorAll('.testimonial p').forEach(p => {
+                const text = p.innerHTML;
+                const randomVariant = nameVariants[Math.floor(Math.random() * nameVariants.length)];
+                p.innerHTML = text.replace(/{{NAME}}/g, randomVariant.replace(/{{NAME}}/g, psychicName));
+            });
+        }
+    }, 100);
+}
+
+function startOnlineCounter(){
+    updateOnlineCount();
+    setInterval(updateOnlineCount, 45000);
+}
+
+function updateOnlineCount(){
+    const count = Math.floor(Math.random() * 4) + 1;
+    const onlineCount = document.getElementById('onlineCount');
+    if (onlineCount) {
+        const word = onlineWords[count - 1] || onlineWords[onlineWords.length - 1];
+        onlineCount.textContent = count;
+        if (onlineCount.parentElement) {
+            onlineCount.parentElement.innerHTML = `${onlineIntro}: <strong>${count}</strong> ${word}`;
+        }
+    }
+}
+
+function setIntentConfirmState({disabled, text, href} = {}){
+    if (!intentConfirmBtn) { return; }
+    if (typeof text === 'string') { intentConfirmBtn.textContent = text; }
+    if (disabled) {
+        intentConfirmBtn.classList.add('disabled');
+        intentConfirmBtn.setAttribute('aria-disabled', 'true');
+        intentConfirmBtn.removeAttribute('href');
+        intentConfirmBtn.removeAttribute('target');
+        intentConfirmBtn.removeAttribute('rel');
+    } else {
+        intentConfirmBtn.classList.remove('disabled');
+        intentConfirmBtn.removeAttribute('aria-disabled');
+        if (href && window.__METRIKA_MESSENGER_VISIBLE__ !== false) {
+            intentConfirmBtn.setAttribute('href', href);
+            intentConfirmBtn.setAttribute('target', '_blank');
+            intentConfirmBtn.setAttribute('rel', 'noopener');
+        } else {
+            intentConfirmBtn.removeAttribute('href');
+            intentConfirmBtn.removeAttribute('target');
+            intentConfirmBtn.removeAttribute('rel');
+        }
+    }
+}
+
+function openContactIntentModal(type, url){
+    if (!contactIntentModal || !url) { return; }
+    pendingMessengerType = type;
+    pendingMessengerUrl = url;
+    pendingMessengerGoal = type === 'telegram' ? 'tg_click' : 'wa_click';
+    if (intentMessengerLabel) { intentMessengerLabel.textContent = type === 'telegram' ? 'Telegram' : 'WhatsApp'; }
+    if (intentTopic) { intentTopic.value = ''; }
+    if (intentReadyCheckbox) { intentReadyCheckbox.checked = false; }
+    intentCountdownFinished = false;
+    startIntentCountdown();
+    updateIntentConfirmState();
+    contactIntentModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeContactIntentModal(){
+    if (!contactIntentModal) { return; }
+    contactIntentModal.classList.remove('active');
+    clearInterval(intentCountdownTimer);
+    intentCountdownTimer = null;
+    intentCountdownFinished = false;
+    setIntentConfirmState({ disabled: true, text: 'Открыть чат сейчас' });
+    if (intentTimerHint) { intentTimerHint.textContent = ''; }
+    const privacyModal = document.getElementById('privacyModal');
+    if ((!ageModal || !ageModal.classList.contains('active')) && (!privacyModal || privacyModal.style.display !== 'block')) {
+        document.body.style.overflow = '';
+    }
+}
+
+function startIntentCountdown(){
+    if (!intentConfirmBtn) { return; }
+    let seconds = 2;
+    setIntentConfirmState({ disabled: true, text: `Подождите ${seconds} секунд` });
+    if (intentTimerHint) { intentTimerHint.textContent = `Проверка перед переходом: ${seconds} секунд`; }
+    clearInterval(intentCountdownTimer);
+    intentCountdownTimer = setInterval(() => {
+        seconds--;
+        if (seconds <= 0) {
+            clearInterval(intentCountdownTimer);
+            intentCountdownTimer = null;
+            intentCountdownFinished = true;
+            if (intentTimerHint) { intentTimerHint.textContent = 'Можно безопасно перейти в чат'; }
+            updateIntentConfirmState();
+        } else {
+            setIntentConfirmState({ disabled: true, text: `Подождите ${seconds} секунд` });
+            if (intentTimerHint) { intentTimerHint.textContent = `Проверка перед переходом: ${seconds} секунд`; }
+        }
+    }, 1000);
+}
+
+function updateIntentConfirmState(){
+    const ready = Boolean(pendingMessengerUrl && intentTopic && intentTopic.value && intentReadyCheckbox && intentReadyCheckbox.checked);
+    if (!intentCountdownFinished) {
+        setIntentConfirmState({ disabled: true });
+        return ready;
+    }
+    if (ready) {
+        setIntentConfirmState({ disabled: false, text: 'Открыть чат сейчас', href: pendingMessengerUrl });
+    } else {
+        setIntentConfirmState({ disabled: true, text: 'Открыть чат сейчас' });
+    }
+    return ready;
+}
+
+function handleIntentConfirm(){
+    if (!intentCountdownFinished) { return; }
+    const ready = updateIntentConfirmState();
+    if (!ready) { return; }
+    if (window.__METRIKA_MESSENGER_VISIBLE__ !== false && typeof ym === 'function' && YM_COUNTER && pendingMessengerGoal) {
+        try { ym(YM_COUNTER, 'reachGoal', pendingMessengerGoal); } catch (err) {}
+    } else if (window.__METRIKA_MESSENGER_VISIBLE__ !== false && typeof ym === 'function' && YM_COUNTER) {
+        try { ym(YM_COUNTER, 'reachGoal', 'all_messenger'); } catch (err) {}
+    }
+    const target = pendingMessengerUrl;
+    const channel = /t\.me|telegram\.me/i.test(target || '') ? 'telegram' : 'whatsapp';
+    const topicValue = intentTopic && intentTopic.value ? String(intentTopic.value).trim() : '';
+    const trackPromise = window.__siteStatsTracker && typeof window.__siteStatsTracker.track === 'function'
+        ? window.__siteStatsTracker.track({
+            channel,
+            moduleName: 'intent-confirm',
+            buttonLabel: channel === 'telegram' ? 'telegram' : 'whatsapp',
+            topic: topicValue
+        })
+        : Promise.resolve();
+    closeContactIntentModal();
+    let opened = false;
+    try {
+        const newTab = window.open(target, '_blank');
+        opened = Boolean(newTab);
+    } catch (err) {}
+    if (!opened) {
+        try { window.location.href = target; } catch (err) {}
+    }
+    Promise.resolve(trackPromise).catch(() => {});
+}
+
+function openPrivacyModal(){
+    const modal = document.getElementById('privacyModal');
+    if (modal) { modal.style.display = 'block'; document.body.style.overflow = 'hidden'; }
+}
+
+function closePrivacyModal(){
+    const modal = document.getElementById('privacyModal');
+    if (modal) { modal.style.display = 'none'; document.body.style.overflow = 'auto'; }
+}
+
+document.addEventListener('click', e => {
+    const modal = document.getElementById('privacyModal');
+    if (modal && e.target === modal) { closePrivacyModal(); }
+});
+
+window.openPrivacyModal = openPrivacyModal;
+window.closePrivacyModal = closePrivacyModal;
+window.openAgeModal = openAgeModal;
+window.closeAgeModal = closeAgeModal;
+window.confirmAgeAccess = confirmAgeAccess;
+window.openUnlockModal = openUnlockModal;
+window.closeUnlockModal = closeUnlockModal;
+window.closeContactIntentModal = closeContactIntentModal;
+
+})();
+</script>
+<script type="text/javascript">
+if(SITE_SETTINGS.yandexMetrikaId){
+(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+m[i].l=1*new Date();
+for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return}}
+k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");
+ym(SITE_SETTINGS.yandexMetrikaId,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true,ecommerce:"dataLayer"});
+}
+</script>
+<noscript><div><img alt="" id="ymImg" src="https://mc.yandex.ru/watch/112461932" style="position:absolute;left:-9999px;"/></div></noscript>
+<script>if(SITE_SETTINGS.yandexMetrikaId){const ymImg=document.getElementById('ymImg');if(ymImg){ymImg.src=`https://mc.yandex.ru/watch/${SITE_SETTINGS.yandexMetrikaId}`}}</script>
+
+<script>
+/* ADSPOWER_NOHREF_GUARD: цель Метрики type=messenger срабатывает на клик по ссылке
+   wa.me/t.me. Убираем href у реального посетителя -> переход через window.open
+   (Метрика мессенджер-клик не видит). Трафик-бот восстанавливает href сам перед
+   кликом, тогда не мешаем (Метрика фиксирует ботовый переход). */
+(function(){
+  document.addEventListener('click', function(e){
+    var a = e.target && e.target.closest ? e.target.closest('a[data-msg-url]') : null;
+    if(!a) return;
+    var h = a.getAttribute('href') || '';
+    if(/(?:wa\.me|t\.me)\//.test(h)) return; /* href восстановлен (бот) — не мешаем */
+    e.preventDefault();
+    var u = a.getAttribute('data-msg-url');
+    if(!u) return;
+    try { var w = window.open(u, '_blank', 'noopener'); if(!w) location.href = u; }
+    catch(err) { location.href = u; }
+  }, false);
+})();
+</script>
+<script>
+/* EXACT_PSYCHIC_NAME_V2 */
+(function(){
+  function exactPsychicName(){
+    var source = window.SITE_SETTINGS || (typeof SITE_SETTINGS !== 'undefined' ? SITE_SETTINGS : {});
+    return String((source && source.psychicName) || '').trim();
+  }
+  function replaceText(root, name){
+    if (!root || !name) return;
+    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    var nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function(node){
+      var parent = node.parentElement || node.parentNode;
+      if (parent && parent.closest && parent.closest('script,style,noscript')) return;
+      if (node.nodeValue && node.nodeValue.indexOf('{{NAME}}') !== -1) {
+        node.nodeValue = node.nodeValue.replace(/{{NAME}}/g, name);
+      }
+    });
+  }
+  function setDirectName(el, name){
+    if (!el) return;
+    var textNode = Array.prototype.find.call(el.childNodes, function(node){
+      return node.nodeType === 3 && String(node.nodeValue || '').trim();
+    });
+    if (textNode) textNode.nodeValue = name + ' ';
+    else el.insertBefore(document.createTextNode(name + ' '), el.firstChild);
+  }
+  function applyExactPsychicName(){
+    var name = exactPsychicName();
+    if (!name) return;
+    replaceText(document.body, name);
+    document.querySelectorAll('#heroName .psychic-name-title,.psychic-name-title,[data-psychic-name],.brand-name,.logo-name').forEach(function(el){
+      el.textContent = name;
+    });
+    var heroName = document.getElementById('heroName');
+    if (heroName && !heroName.querySelector('.psychic-name-title')) heroName.textContent = name;
+    setDirectName(document.getElementById('brandName'), name);
+  }
+  function run(){
+    applyExactPsychicName();
+    setTimeout(applyExactPsychicName, 350);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
+  else run();
+})();
+</script>
+
+<!-- CONVERSIA_MAX_RUNTIME_BEGIN -->
+<style>/* Shape, spacing and type come from each site's existing .btn rule. */
+.btn.btn-max[data-max-button] {
+  background: linear-gradient(135deg, #471aff, #9500ff) !important;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55em;
+  box-shadow: 0 10px 30px rgba(71, 26, 255, .32);
+}
+.btn-max:hover { box-shadow: 0 15px 40px rgba(71, 26, 255, .48); }
+.btn-max:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.btn-max .max-icon { width: 1.2em; height: 1.2em; flex: 0 0 1.2em; object-fit: contain; }
+.contacts-locked .btn-max { pointer-events: none; opacity: .5; filter: blur(3px); cursor: not-allowed; }
+
+@media (max-width: 360px) {
+  .sticky-messengers.conversia-max-compact-sticky {
+    left: auto !important;
+    right: 15px !important;
+    bottom: 15px !important;
+    width: auto !important;
+    align-items: flex-end;
+    gap: 8px !important;
+    animation: none !important;
+  }
+  .sticky-messengers.conversia-max-compact-sticky:not(.is-open) > :not(.sticky-messenger-toggle) {
+    display: none !important;
+  }
+  .sticky-messengers.conversia-max-compact-sticky .conversia-max-sticky-toggle {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 999px;
+    color: #fff;
+    background: #471aff;
+    box-shadow: 0 10px 30px rgba(71, 26, 255, .32);
+    cursor: pointer;
+  }
+  .sticky-messengers.conversia-max-compact-sticky .btn {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: 220px;
+    min-height: 40px;
+    padding: 8px 12px !important;
+    font-size: .78rem !important;
+    line-height: 1.2;
+  }
+}</style>
+<script>/* MAX-only inline runtime. Site adapters supply the existing CTA placements. */
+(function (global) {
+  'use strict';
+  const instances = new WeakMap();
+
+  function install(options) {
+    const root = options.root || document;
+    if (instances.has(root)) return instances.get(root);
+    const nodes = new Map();
+    const compactStickies = new Map();
+    let observer = null;
+    let resizeHandler = null;
+
+    function config() {
+      const settings = options.getSettings();
+      if (!settings || settings.maxEnabled !== true || typeof settings.maxUrl !== 'string') return null;
+      const value = settings.maxUrl.trim();
+      if (!value) return null;
+      try {
+        const url = new URL(value);
+        if (url.protocol !== 'https:' || !['max.ru', 'web.max.ru'].includes(url.hostname) || url.port || url.username || url.password) return null;
+        if (/[\s\\\u0000-\u001f\u007f]/.test(value)) return null;
+      } catch (_) { return null; }
+      return value;
+    }
+
+    function isAndroidClient() {
+      const ua = String((global.navigator && global.navigator.userAgent) || '');
+      return /Android/i.test(ua);
+    }
+
+    function isMobileClient() {
+      const ua = String((global.navigator && global.navigator.userAgent) || '');
+      return isAndroidClient() || /iPhone|iPad|iPod/i.test(ua) ||
+        (/Macintosh/i.test(ua) && Number((global.navigator && global.navigator.maxTouchPoints) || 0) > 1);
+    }
+
+    function mobileAppUrl(value) {
+      if (!isMobileClient()) return '';
+      try {
+        const url = new URL(value);
+        const userId = url.hostname === 'web.max.ru' ? url.searchParams.get('userId') : '';
+        if (!/^\d+$/.test(userId || '')) return '';
+        return 'max://max.ru/:push?uid=' + userId;
+      } catch (_) { return ''; }
+    }
+
+    function navigationUrl(value) {
+      return mobileAppUrl(value) || value;
+    }
+
+    function blocked(button) {
+      const sticky = button.closest('.sticky-messengers');
+      return (options.guardContacts && document.body.classList.contains('contacts-locked')) ||
+        !!(sticky && sticky.querySelector('.sticky-messenger-toggle') && !sticky.classList.contains('is-open'));
+    }
+
+    function updateAccessibility() {
+      nodes.forEach(button => {
+        const disabled = blocked(button);
+        button.setAttribute('tabindex', disabled ? '-1' : '0');
+        if (disabled) button.setAttribute('aria-disabled', 'true');
+        else button.removeAttribute('aria-disabled');
+      });
+    }
+
+    function closeSticky(button) {
+      const sticky = button.closest('.sticky-messengers');
+      if (!sticky || !sticky.querySelector('.sticky-messenger-toggle')) return;
+      sticky.classList.remove('is-open');
+      sticky.querySelector('.sticky-messenger-toggle').setAttribute('aria-expanded', 'false');
+    }
+
+    function setStickyExpanded(sticky, expanded) {
+      sticky.classList.toggle('is-open', expanded);
+      const toggle = sticky.querySelector('.conversia-max-sticky-toggle');
+      if (toggle) toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      updateAccessibility();
+    }
+
+    function stickyHasMax(sticky) {
+      for (const button of nodes.values()) {
+        if (button.closest('.sticky-messengers') === sticky) return true;
+      }
+      return false;
+    }
+
+    function removeCompactSticky(sticky) {
+      const state = compactStickies.get(sticky);
+      if (!state) return;
+      if (state.toggle) state.toggle.remove();
+      sticky.classList.remove('conversia-max-compact-sticky');
+      if (state.restoreOpen) sticky.classList.toggle('is-open', state.wasOpen);
+      compactStickies.delete(sticky);
+    }
+
+    function installCompactSticky(sticky) {
+      if (compactStickies.has(sticky)) return;
+      // A template-owned toggle already controls .is-open.  It still needs the
+      // compact class: otherwise its invisible options wrapper remains a large
+      // fixed hit target and can cover a regular MAX CTA on narrow screens.
+      if (sticky.querySelector('.sticky-messenger-toggle')) {
+        compactStickies.set(sticky, {toggle: null, restoreOpen: false});
+        sticky.classList.add('conversia-max-compact-sticky');
+        return;
+      }
+      const toggle = document.createElement('button');
+      toggle.type = 'button';
+      toggle.className = 'sticky-messenger-toggle conversia-max-sticky-toggle';
+      toggle.setAttribute('aria-label', 'Открыть мессенджеры');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = 'Мессенджеры';
+      compactStickies.set(sticky, {toggle: toggle, wasOpen: sticky.classList.contains('is-open'), restoreOpen: true});
+      sticky.classList.add('conversia-max-compact-sticky');
+      sticky.classList.remove('is-open');
+      toggle.addEventListener('click', function () {
+        setStickyExpanded(sticky, !sticky.classList.contains('is-open'));
+      });
+      toggle.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setStickyExpanded(sticky, false);
+        }
+      });
+      sticky.appendChild(toggle);
+    }
+
+    function syncCompactStickies() {
+      const compact = global.matchMedia && global.matchMedia('(max-width: 360px)').matches;
+      root.querySelectorAll('.sticky-messengers').forEach(sticky => {
+        if (compact && stickyHasMax(sticky)) installCompactSticky(sticky);
+        else removeCompactSticky(sticky);
+      });
+      updateAccessibility();
+    }
+
+    function open(button, event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const url = config();
+      if (!url || blocked(button)) return;
+      const visible = global.__METRIKA_MESSENGER_VISIBLE__ === true;
+      if (options.directGoals && visible && typeof global.ym === 'function' && options.getCounter) {
+        const counter = options.getCounter();
+        if (counter) { try { global.ym(counter, 'reachGoal', 'max_click'); } catch (_) {} }
+      }
+      try {
+        if (global.__siteStatsTracker && typeof global.__siteStatsTracker.track === 'function') {
+          Promise.resolve(global.__siteStatsTracker.track({channel: 'max', moduleName: 'direct-click', buttonLabel: 'max'})).catch(function () {});
+        }
+      } catch (_) {}
+      const targetUrl = navigationUrl(url);
+      if (isMobileClient() && targetUrl.indexOf('max://max.ru/:push?uid=') === 0) {
+        // Same-tab navigation preserves the user gesture required for the
+        // operating system to hand an HTTPS app link to MAX.
+        try { global.location.href = targetUrl; } catch (_) {}
+      } else {
+        let opened = null;
+        try { opened = global.open(targetUrl, '_blank'); } catch (_) {}
+        if (opened) { try { opened.opener = null; } catch (_) {} }
+        else if (options.fallbackNavigation) { try { global.location.href = targetUrl; } catch (_) {} }
+      }
+      closeSticky(button);
+    }
+
+    function create(reference) {
+      const button = document.createElement('a');
+      // Do not copy legacy messenger classes, data attributes or handlers.
+      button.className = 'btn btn-max';
+      if (reference.classList.contains('sticky-messenger-option')) button.classList.add('sticky-messenger-option');
+      button.setAttribute('data-max-button', 'true');
+      const icon = document.createElement('img');
+      icon.className = 'max-icon';
+      icon.alt = '';
+      icon.setAttribute('aria-hidden', 'true');
+      icon.src = options.iconUrl;
+      button.appendChild(icon);
+      button.appendChild(document.createTextNode(reference.classList.contains('sticky-messenger-option') ? 'MAX' : 'Написать в MAX'));
+      button.addEventListener('click', event => open(button, event));
+      button.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') open(button, event);
+      });
+      reference.insertAdjacentElement('afterend', button);
+      nodes.set(reference, button);
+      return button;
+    }
+
+    function refresh() {
+      const url = config();
+      if (!url) {
+        nodes.forEach(button => button.remove());
+        nodes.clear();
+        compactStickies.forEach(function (_, sticky) { removeCompactSticky(sticky); });
+        if (observer) { observer.disconnect(); observer = null; }
+        if (resizeHandler) { global.removeEventListener('resize', resizeHandler); resizeHandler = null; }
+        return;
+      }
+      root.querySelectorAll(options.referenceSelector).forEach(reference => {
+        const button = nodes.get(reference) || create(reference);
+        const targetUrl = navigationUrl(url);
+        button.setAttribute('data-max-url', targetUrl);
+        if (global.__METRIKA_MESSENGER_VISIBLE__ !== true) {
+          button.removeAttribute('href');
+          button.removeAttribute('target');
+          button.removeAttribute('rel');
+          button.setAttribute('role', 'button');
+        } else {
+          button.href = targetUrl;
+          if (isMobileClient() && targetUrl.indexOf('max://max.ru/:push?uid=') === 0) {
+            button.removeAttribute('target');
+            button.removeAttribute('rel');
+          } else {
+            button.target = '_blank';
+            button.rel = 'noopener noreferrer';
+          }
+          button.removeAttribute('role');
+        }
+      });
+      syncCompactStickies();
+      updateAccessibility();
+      if (!observer) {
+        observer = new MutationObserver(updateAccessibility);
+        observer.observe(document.body, {attributes: true, attributeFilter: ['class']});
+        root.querySelectorAll('.sticky-messengers').forEach(sticky => {
+          observer.observe(sticky, {attributes: true, attributeFilter: ['class']});
+        });
+      }
+      if (!resizeHandler) {
+        resizeHandler = syncCompactStickies;
+        global.addEventListener('resize', resizeHandler);
+      }
+    }
+
+    const instance = {refresh, destroy: function () {
+      nodes.forEach(button => button.remove()); nodes.clear();
+      compactStickies.forEach(function (_, sticky) { removeCompactSticky(sticky); });
+      if (observer) observer.disconnect();
+      if (resizeHandler) global.removeEventListener('resize', resizeHandler);
+      instances.delete(root);
+    }};
+    instances.set(root, instance);
+    refresh();
+    return instance;
+  }
+
+  global.ConversiaMax = {install};
+})(window);
+
+(function(){function start(){var config={"referenceSelector": "a.btn-tg,button.btn-tg", "guardContacts": true, "directGoals": false, "fallbackNavigation": false, "iconUrl": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMF84NTEwXzgzMzgpIj4KPG1hc2sgaWQ9Im1hc2swXzg1MTBfODMzOCIgc3R5bGU9Im1hc2stdHlwZTpsdW1pbmFuY2UiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIj4KPHBhdGggZD0iTTUwLjc1NzEgMC4yNjE3MTlDNzguMjkyOSAwLjI2MTcxOSA5OS44ODU3IDIyLjU5NzQgOTkuODg1NyA1MC4xNDc0Qzk5Ljg4NTcgNzcuNjk3NCA3Ny42MDcxIDk5LjQ5MDMgNTEuMDIxNCA5OS40OTAzQzQxLjU4NTcgOTkuNDkwMyAzNy4wMTQzIDk4LjE2MTcgMjkuNjUgOTIuOTQ3NEMyOS4xNDI5IDkyLjU5MDMgMjguNDUgOTIuNjgzMSAyOC4wMjE0IDkzLjE0MDNDMjIuMzU3MSA5OS4xODMxIDcuODUgMTAzLjQyNiA3LjE4NTcxIDk1LjE3NkM3LjE4NTcxIDgwLjc5MDMgMCA3MS40NDc0IDAgNDkuODc2QzAgMjEuNTU0NiAyMy4yMjE0IDAuMjYxNzE5IDUwLjc1NzEgMC4yNjE3MTlaTTUxLjUyODYgMjQuODExN0MzOC40NjQzIDI0LjEyNiAyOC4yNjQzIDMzLjE5NzQgMjYuMDE0MyA0Ny4zODMxQzI0LjE1IDU5LjEzMzIgMjcuNDUgNzMuNDU0NiAzMC4yNzg2IDc0LjE3NkMzMS40Nzg2IDc0LjQ4MzIgMzQuMzU3MSA3Mi4yNzYgMzYuNDU3MSA3MC4yOTc0QzM2Ljg1IDY5LjkyNiAzNy40NSA2OS44NjE3IDM3LjkwNzEgNzAuMTQ3NEM0MS4xNzg2IDcyLjE0NzQgNDQuODc4NiA3My42NDc0IDQ4Ljk1NzEgNzMuODYxN0M2Mi4zNzE0IDc0LjU2MTcgNzQuMjU3MSA2NC4wNjE3IDc0Ljk2NDMgNTAuNjQ3NEM3NS42NjQzIDM3LjIzMzEgNjQuOTQyOSAyNS41MDQ2IDUxLjUyODYgMjQuODA0NlYyNC44MTE3WiIgZmlsbD0id2hpdGUiLz4KPC9tYXNrPgo8ZyBtYXNrPSJ1cmwoI21hc2swXzg1MTBfODMzOCkiPgo8cGF0aCBkPSJNNDkuNjk5NiA1MC4wODA4TC0xMi40MDc2IDg0LjUwMjJDLTEzLjQwNzYgODIuNjk1MSAtMTQuMzI5IDgwLjg0NTEgLTE1LjE3MTkgNzguOTU5NEw0OS42OTI0IDUwLjA4MDhINDkuNjk5NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTc1IDUwLjA4MDhMLTE1LjE3MzkgNzguOTU5NEMtMTYuMDE2NyA3Ny4wNzM3IC0xNi43NzM5IDc1LjE1MjIgLTE3LjQ0NTMgNzMuMTk1MUw0OS42OTA0IDUwLjA4MDhINDkuNjk3NVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTY5IDUwLjA4MDhMLTE3LjQ0NiA3My4xOTUxQy0xOC4xMTc0IDcxLjI0NTEgLTE4LjcwMzEgNjkuMjU5NCAtMTkuMjAzMSA2Ny4yNTk0TDQ5LjY5NjkgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTgyIDUwLjA4MDhMLTE5LjIwMTggNjcuMjU5NEMtMTkuNzAxOCA2NS4yNTIyIC0yMC4xMTYxIDYzLjIzMDggLTIwLjQzNzUgNjEuMTg4TDQ5LjY5MTEgNTAuMDgwOEg0OS42OTgyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTcgNTAuMDgwOEwtMjAuNDI4OSA2MS4xODhDLTIwLjc1MDMgNTkuMTQ1MSAtMjAuOTg2IDU3LjA5NTEgLTIxLjEyODkgNTUuMDMwOEw0OS43MDY4IDUwLjA4MDhINDkuNjk5N1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTc5IDUwLjA4MjFMLTIxLjEzNzkgNTUuMDMyMUMtMjEuMjgwNyA1Mi45Njc4IC0yMS4zMzc5IDUwLjkwMzUgLTIxLjMwMjEgNDguODM5Mkw0OS42OTA3IDUwLjA4MjFINDkuNjk3OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTYgNTAuMDgyTC0yMS4yOTY5IDQ4LjgzOTJDLTIxLjI2MTIgNDYuNzc0OSAtMjEuMTMyNiA0NC43MTA2IC0yMC45MTgzIDQyLjY1MzRMNDkuNjk2IDUwLjA3NDlWNTAuMDgyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NjMgNTAuMDgxN0wtMjAuOTE4IDQyLjY2MDNDLTIwLjcwMzcgNDAuNjAzMiAtMjAuMzk2NSAzOC41NjAzIC0yMC4wMDM3IDM2LjUzMTdMNDkuNjk2MyA1MC4wODE3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTMgNTAuMDgxOUwtMjAuMDA3OCAzNi41MzE5Qy0xOS42MTUgMzQuNTAzNCAtMTkuMTI5MiAzMi40OTYyIC0xOC41NjUgMzAuNTEwNUw0OS42OTIyIDUwLjA4MTlINDkuNjk5M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg2IDUwLjA4MDFMLTE4LjU1ODYgMzAuNTA4NkMtMTcuOTg3MiAyOC41MjI5IC0xNy4zMyAyNi41NjU4IC0xNi41OTQzIDI0LjYzNzJMNDkuNjk4NiA1MC4wODcyVjUwLjA4MDFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MSA1MC4wODIyTC0xNi41OTM4IDI0LjYzMjJDLTE1Ljg1MDkgMjIuNzAzNiAtMTUuMDI5NSAyMC44MTA4IC0xNC4xMjIzIDE4Ljk1MzZMNDkuNjk5MSA1MC4wODIyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NjQgNTAuMDgxNEwtMTQuMTI1IDE4Ljk1MjlDLTEzLjIxNzkgMTcuMDk1NyAtMTIuMjMyMSAxNS4yODE0IC0xMS4xNjc5IDEzLjUxTDQ5LjY5NjQgNTAuMDgxNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTYzIDUwLjA4MTFMLTExLjE2OCAxMy41MDk2Qy0xMC4xMDM3IDExLjczODIgLTguOTYwODMgMTAuMDE2OCAtNy43NDY1NCA4LjM0NTM0TDQ5LjY5NjMgNTAuMDgxMVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTYxIDUwLjA4MThMLTcuNzUzOTEgOC4zNDYwOUMtNi41Mzk2MiA2LjY3NDY2IC01LjI1MzkxIDUuMDYwMzggLTMuODk2NzYgMy40OTYwOUw0OS42ODg5IDUwLjA4MThINDkuNjk2MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTgzIDUwLjA4MjVMLTMuODk0NTMgMy40OTY3NkMtMi41MzczOSAxLjkzOTYyIC0xLjExNTk2IDAuNDM5NjIgMC4zNjk3NTQgLTAuOTk2MDk0TDQ5LjY5MTIgNTAuMDgyNUg0OS42OTgzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTcgNTAuMDgyNEwwLjM3MTA5NCAtMC45OTYxMjlDMS44NTY4MSAtMi40MzE4NCAzLjQwNjgxIC0zLjgwMzI3IDUuMDEzOTUgLTUuMTAzMjdMNDkuNjk5NyA1MC4wODI0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NzQgNTAuMDgyNEw1LjAxMTcyIC01LjEwMzM1QzYuNjE4ODYgLTYuNDAzMzUgOC4yNzYgLTcuNjMxOTIgOS45OTAyOSAtOC43ODkwNkw0OS42OTc0IDUwLjA3NTJWNTAuMDgyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkzIDUwLjA4MTRMOS45OTIxOSAtOC43OTAwNEMxMS43MDY1IC05Ljk0NzE4IDEzLjQ2MzYgLTExLjAyNTggMTUuMjcwOCAtMTIuMDI1OEw0OS42OTIyIDUwLjA4MTRINDkuNjk5M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTgxIDUwLjA4MDdMMTUuMjY5NSAtMTIuMDI2NUMxNy4wNzY3IC0xMy4wMjY1IDE4LjkyNjcgLTEzLjk0NzkgMjAuODEyNCAtMTQuNzkwOEw0OS42OTEgNTAuMDczNUg0OS42OTgxVjUwLjA4MDdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MiA1MC4wODA4TDIwLjgxMjUgLTE0Ljc5MDZDMjIuNjk4MiAtMTUuNjMzNCAyNC42MTk2IC0xNi4zOTA2IDI2LjU3NjggLTE3LjA2Mkw0OS42OTExIDUwLjA3MzdINDkuNjk4MlY1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTYgNTAuMDgxNEwyNi41NzgxIC0xNy4wNTQzQzI4LjUyODEgLTE3LjcyNTcgMzAuNTEzOCAtMTguMzExNCAzMi41MjEgLTE4LjgxMTRMNDkuNjk5NiA1MC4wODg2VjUwLjA4MTRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MSA1MC4wNzk4TDMyLjUxOTUgLTE4LjgyMDJDMzQuNTI2NyAtMTkuMzIwMiAzNi41NDgxIC0xOS43MzQ1IDM4LjU5MSAtMjAuMDU1OUw0OS42OTgxIDUwLjA3OThaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk3IDUwLjA4MDhMMzguNTg5OCAtMjAuMDQ3OEM0MC42MzI3IC0yMC4zNjkyIDQyLjY4MjcgLTIwLjYwNDkgNDQuNzQ3IC0yMC43NDc4TDQ5LjY5NyA1MC4wODc5VjUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2MSA1MC4wODEyTDQ0Ljc0NjEgLTIwLjc1NDZDNDYuODEwNCAtMjAuODk3NCA0OC44NzQ3IC0yMC45NTQ2IDUwLjkzOSAtMjAuOTE4OEw0OS42OTYxIDUwLjA3NFY1MC4wODEyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwNEw1MC45NDIxIC0yMC45MTI1QzUzLjAwNjQgLTIwLjg3NjggNTUuMDcwNiAtMjAuNzQ4MiA1Ny4xMjc4IC0yMC41MzM5TDQ5LjcwNjQgNTAuMDgwNEg0OS42OTkyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgxM0w1Ny4xMjA2IC0yMC41MzNDNTkuMTc3OCAtMjAuMzE4NyA2MS4yMjA2IC0yMC4wMTE1IDYzLjI0OTIgLTE5LjYxODdMNDkuNjk5MiA1MC4wODEzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgyMkw2My4yNDkyIC0xOS42MTc4QzY1LjI3NzggLTE5LjIyNDkgNjcuMjg0OSAtMTguNzM5MiA2OS4yNzA2IC0xOC4xNzQ5TDQ5LjY5OTIgNTAuMDgyMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg2IDUwLjA4MThMNjkuMjcgLTE4LjE3NTNDNzEuMjU1NyAtMTcuNjAzOSA3My4yMTI4IC0xNi45NDY3IDc1LjE0MTQgLTE2LjIxMUw0OS42OTE0IDUwLjA4MThINDkuNjk4NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg2IDUwLjA4MTlMNzUuMTQxNCAtMTYuMjEwOUM3Ny4wNyAtMTUuNDY4MSA3OC45NjI4IC0xNC42NDY3IDgwLjgyIC0xMy43Mzk1TDQ5LjY5MTQgNTAuMDgxOUg0OS42OTg2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgyNUw4MC44Mjc4IC0xMy43Mzg5QzgyLjY4NDkgLTEyLjgzMTcgODQuNDk5MiAtMTEuODQ2IDg2LjI3MDYgLTEwLjc4MTdMNDkuNjk5MiA1MC4wODI1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwMkw4Ni4yNzA2IC0xMC43ODQxQzg4LjA0MjEgLTkuNzE5NzcgODkuNzYzNSAtOC41NzY5MSA5MS40MzQ5IC03LjM2MjYzTDQ5LjY5OTIgNTAuMDgwMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MjNMOTEuNDM0OSAtNy4zNjA2QzkzLjEwNjQgLTYuMTQ2MzEgOTQuNzIwNiAtNC44NjA2IDk2LjI4NDkgLTMuNTAzNDVMNDkuNjk5MiA1MC4wODIzWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDc5OUw5Ni4yODQ5IC0zLjUxMjk0Qzk3Ljg0MjEgLTIuMTU1OCA5OS4zNDIxIC0wLjczNDM2OCAxMDAuNzc4IDAuNzUxMzQ3TDQ5LjY5OTIgNTAuMDcyOFY1MC4wNzk5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgxOUwxMDAuNzc4IDAuNzUzMjk2QzEwMi4yMTQgMi4yMzkwMSAxMDMuNTg1IDMuNzg5MDEgMTA0Ljg4NSA1LjM5NjE1TDQ5LjY5OTIgNTAuMDgxOVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MThMMTA0Ljg3OCA1LjM5NjEyQzEwNi4xNzggNy4wMDMyNiAxMDcuNDA2IDguNjYwNCAxMDguNTY0IDEwLjM3NDdMNDkuNjk5MiA1MC4wODE4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5ODYgNTAuMDgwOUwxMDguNTYzIDEwLjM3MzhDMTA5LjcyIDEyLjA4ODEgMTEwLjc5OSAxMy44NDUyIDExMS43OTkgMTUuNjUyM0w0OS42OTE0IDUwLjA3MzhINDkuNjk4NlY1MC4wODA5WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDc5OUwxMTEuODA2IDE1LjY1ODRDMTEyLjgwNiAxNy40NjU2IDExMy43MjggMTkuMzE1NiAxMTQuNTcxIDIxLjIwMTNMNDkuNzA2NCA1MC4wNzk5SDQ5LjY5OTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODExTDExNC41NjMgMjEuMjAyNUMxMTUuNDA2IDIzLjA4ODIgMTE2LjE2MyAyNS4wMDk3IDExNi44MzUgMjYuOTY2OEw0OS42OTkyIDUwLjA4MTFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NiA1MC4wODEzTDExNi44MzQgMjYuOTY3QzExNy41MDYgMjguOTE3IDExOC4wOTEgMzAuOTAyOCAxMTguNTkxIDMyLjkwOTlMNDkuNjkxNCA1MC4wODg1TDQ5LjY5ODYgNTAuMDgxM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDNMMTE4LjU5OSAzMi45MDE3QzExOS4wOTkgMzQuOTA4OSAxMTkuNTE0IDM2LjkzMDMgMTE5LjgzNSAzOC45NzMyTDQ5LjY5OTIgNTAuMDgwM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg2IDUwLjA4MDNMMTE5LjgyNyAzOC45NzMxQzEyMC4xNDkgNDEuMDE2IDEyMC4zODQgNDMuMDY2IDEyMC41MjcgNDUuMTMwM0w0OS42OTE0IDUwLjA4MDNINDkuNjk4NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MTFMMTIwLjUzNSA0NS4xMzExQzEyMC42NzggNDcuMTk1NCAxMjAuNzM1IDQ5LjI1OTcgMTIwLjY5OSA1MS4zMjRMNDkuNzA2NCA1MC4wODExSDQ5LjY5OTJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDEyMC42OTIgNTEuMzIzN0MxMjAuNjU2IDUzLjM4OCAxMjAuNTI4IDU1LjQ1MjIgMTIwLjMxNCA1Ny41MDk0TDQ5LjY5OTIgNTAuMDg4VjUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDEyMC4zMTQgNTcuNTAyMkMxMjAuMDk5IDU5LjU1OTQgMTE5Ljc5MiA2MS42MDIyIDExOS4zOTkgNjMuNjMwOEw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDExOS4zOTkgNjMuNjMwOEMxMTkuMDA2IDY1LjY1OTQgMTE4LjUyMSA2Ny42NjY1IDExNy45NTYgNjkuNjUyMkw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODI1TDExNy45NTYgNjkuNjUzOUMxMTcuMzg1IDcxLjYzOTYgMTE2LjcyOCA3My41OTY3IDExNS45OTIgNzUuNTI1M0w0OS42OTkyIDUwLjA3NTNWNTAuMDgyNVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMMTE1Ljk5MiA3NS41MzA4QzExNS4yNDkgNzcuNDU5NCAxMTQuNDI4IDc5LjM1MjIgMTEzLjUyMSA4MS4yMDk0TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMMTEzLjUyMSA4MS4yMDk0QzExMi42MTMgODMuMDY2NSAxMTEuNjI4IDg0Ljg4MDggMTEwLjU2MyA4Ni42NTIyTDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMMTEwLjU2MyA4Ni42NTIyQzEwOS40OTkgODguNDIzNyAxMDguMzU2IDkwLjE0NTEgMTA3LjE0MiA5MS44MTY1TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMMTA3LjE0MiA5MS44MTY1QzEwNS45MjggOTMuNDg3OSAxMDQuNjQyIDk1LjEwMjIgMTAzLjI4NSA5Ni42NjY1TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMMTAzLjI4NSA5Ni42NjY1QzEwMS45MjggOTguMjIzNyAxMDAuNTA2IDk5LjcyMzcgOTkuMDIwNiAxMDEuMTU5TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMOTkuMDIwNyAxMDEuMTU5Qzk3LjUzNDkgMTAyLjU5NSA5NS45ODQ5IDEwMy45NjcgOTQuMzg0OSAxMDUuMjY3TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMOTQuMzg0OSAxMDUuMjY3QzkyLjc3NzggMTA2LjU2NyA5MS4xMjA2IDEwNy43OTUgODkuNDA2NCAxMDguOTUyTDQ5LjY5OTIgNTAuMDg4VjUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODI1TDg5LjQwNjQgMTA4Ljk0N0M4Ny42OTIxIDExMC4xMDQgODUuOTM0OSAxMTEuMTgyIDg0LjEyNzggMTEyLjE4Mkw0OS43MDY0IDUwLjA3NTNINDkuNjk5MlY1MC4wODI1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwOEw4NC4xMjA2IDExMi4xODhDODIuMzEzNSAxMTMuMTg4IDgwLjQ2MzUgMTE0LjEwOSA3OC41Nzc4IDExNC45NTJMNDkuNjk5MiA1MC4wODhWNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMNzguNTc3OCAxMTQuOTQ1Qzc2LjY5MjEgMTE1Ljc4OCA3NC43NzA2IDExNi41NDUgNzIuODEzNSAxMTcuMjE3TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg2IDUwLjA4MjVMNzIuODEyOCAxMTcuMjE4QzcwLjg1NTcgMTE3Ljg5IDY4Ljg3NzEgMTE4LjQ3NSA2Ni44NyAxMTguOTc1TDQ5LjY5MTQgNTAuMDc1M0g0OS42OTg2VjUwLjA4MjVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDY2Ljg3NzggMTE4Ljk4MUM2NC44NzA2IDExOS40ODEgNjIuODQ5MiAxMTkuODk1IDYwLjgwNjQgMTIwLjIxN0w0OS42OTkyIDUwLjA4OFY1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwOEw2MC44MDY0IDEyMC4yMTdDNTguNzYzNSAxMjAuNTM4IDU2LjcxMzUgMTIwLjc3NCA1NC42NDkyIDEyMC45MTdMNDkuNjk5MiA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NiA1MC4wODA4TDU0LjY0NiAxMjAuOTE3QzUyLjU4MTcgMTIxLjA1OSA1MC41MTc0IDEyMS4xMTcgNDguNDUzMSAxMjEuMDgxTDQ5LjY5NiA1MC4wODhWNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTgxIDUwLjA4MDhMNDguNDU1MiAxMjEuMDc0QzQ2LjM5MSAxMjEuMDM4IDQ0LjMyNjcgMTIwLjkwOSA0Mi4yNjk1IDEyMC42OTVMNDkuNjkxIDUwLjA4MDhINDkuNjk4MVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg0IDUwLjA4MDhMNDIuMjc3IDEyMC42OTVDNDAuMjE5OSAxMjAuNDgxIDM4LjE3NyAxMjAuMTc0IDM2LjE0ODQgMTE5Ljc4MUw0OS42OTg0IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2NCA1MC4wODA4TDM2LjE0NjQgMTE5Ljc4MUMzNC4xMTc5IDExOS4zODggMzIuMTEwNyAxMTguOTAyIDMwLjEyNSAxMTguMzM4TDQ5LjY5NjQgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTY4IDUwLjA4MDhMMzAuMTI1MyAxMTguMzM4QzI4LjEzOTYgMTE3Ljc2NyAyNi4xODI1IDExNy4xMDkgMjQuMjUzOSAxMTYuMzc0TDQ5LjcwMzkgNTAuMDgwOEg0OS42OTY4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5ODkgNTAuMDgwOEwyNC4yNDg5IDExNi4zNzRDMjIuMzIwMyAxMTUuNjMxIDIwLjQyNzUgMTE0LjgwOSAxOC41NzAzIDExMy45MDJMNDkuNjk4OSA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NjQgNTAuMDgwOEwxOC41Njc5IDExMy45MDJDMTYuNzEwNyAxMTIuOTk1IDE0Ljg5NjQgMTEyLjAwOSAxMy4xMjUgMTEwLjk0NUw0OS42OTY0IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2NyA1MC4wODA4TDEzLjEyNTIgMTEwLjk0NUMxMS4zNTM4IDEwOS44ODEgOS42MzIzNyAxMDguNzM4IDcuOTYwOTQgMTA3LjUyNEw0OS42OTY3IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MyA1MC4wODA4TDcuOTU1NDcgMTA3LjUyNEM2LjI4NDA0IDEwNi4zMDkgNC42Njk3NSAxMDUuMDI0IDMuMTA1NDcgMTAzLjY2N0w0OS42OTEyIDUwLjA4MDhINDkuNjk4M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTk3IDUwLjA4MDhMMy4xMTM5NSAxMDMuNjY3QzEuNTU2ODEgMTAyLjMwOSAwLjA1NjgwNzkgMTAwLjg4OCAtMS4zNzg5MSA5OS40MDIyTDQ5LjY5OTcgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTc0IDUwLjA4MDhMLTEuMzgxMTQgOTkuNDAyMkMtMi44MTY4NSA5Ny45MTY1IC00LjE4ODI4IDk2LjM2NjUgLTUuNDg4MjggOTQuNzY2NUw0OS42OTc0IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5NiA1MC4wODA4TC01LjQ4NjE2IDk0Ljc2NjVDLTYuNzg2MTYgOTMuMTU5NCAtOC4wMTQ3MyA5MS41MDIyIC05LjE3MTg4IDg5Ljc4NzlMNDkuNjkyNCA1MC4wODA4SDQ5LjY5OTZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk3IDUwLjA4MDhMLTkuMTc0NDQgODkuNzg4Qy0xMC4zMzE2IDg4LjA3MzcgLTExLjQxMDIgODYuMzA5NCAtMTIuNDEwMiA4NC41MDIyTDQ5LjY5NyA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPGcgZmlsdGVyPSJ1cmwoI2ZpbHRlcjBfZl84NTEwXzgzMzgpIj4KPHBhdGggZD0iTTQ5LjY5OTYgNTAuMDgwOEwtMTIuNDA3NiA4NC41MDIyQy0xMy40MDc2IDgyLjY5NTEgLTE0LjMyOSA4MC44NDUxIC0xNS4xNzE5IDc4Ljk1OTRMNDkuNjkyNCA1MC4wODA4SDQ5LjY5OTZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk3NSA1MC4wODA4TC0xNS4xNzM5IDc4Ljk1OTRDLTE2LjAxNjcgNzcuMDczNyAtMTYuNzczOSA3NS4xNTIyIC0xNy40NDUzIDczLjE5NTFMNDkuNjkwNCA1MC4wODA4SDQ5LjY5NzVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2OSA1MC4wODA4TC0xNy40NDYgNzMuMTk1MUMtMTguMTE3NCA3MS4yNDUxIC0xOC43MDMxIDY5LjI1OTQgLTE5LjIwMzEgNjcuMjU5NEw0OS42OTY5IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MiA1MC4wODA4TC0xOS4yMDE4IDY3LjI1OTRDLTE5LjcwMTggNjUuMjUyMiAtMjAuMTE2MSA2My4yMzA4IC0yMC40Mzc1IDYxLjE4OEw0OS42OTExIDUwLjA4MDhINDkuNjk4MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTk3IDUwLjA4MDhMLTIwLjQyODkgNjEuMTg4Qy0yMC43NTAzIDU5LjE0NTEgLTIwLjk4NiA1Ny4wOTUxIC0yMS4xMjg5IDU1LjAzMDhMNDkuNzA2OCA1MC4wODA4SDQ5LjY5OTdaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk3OSA1MC4wODIxTC0yMS4xMzc5IDU1LjAzMjFDLTIxLjI4MDcgNTIuOTY3OCAtMjEuMzM3OSA1MC45MDM1IC0yMS4zMDIxIDQ4LjgzOTJMNDkuNjkwNyA1MC4wODIxSDQ5LjY5NzlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2IDUwLjA4MkwtMjEuMjk2OSA0OC44MzkyQy0yMS4yNjEyIDQ2Ljc3NDkgLTIxLjEzMjYgNDQuNzEwNiAtMjAuOTE4MyA0Mi42NTM0TDQ5LjY5NiA1MC4wNzQ5VjUwLjA4MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTYzIDUwLjA4MTdMLTIwLjkxOCA0Mi42NjAzQy0yMC43MDM3IDQwLjYwMzIgLTIwLjM5NjUgMzguNTYwMyAtMjAuMDAzNyAzNi41MzE3TDQ5LjY5NjMgNTAuMDgxN1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkzIDUwLjA4MTlMLTIwLjAwNzggMzYuNTMxOUMtMTkuNjE1IDM0LjUwMzQgLTE5LjEyOTIgMzIuNDk2MiAtMTguNTY1IDMwLjUxMDVMNDkuNjkyMiA1MC4wODE5SDQ5LjY5OTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NiA1MC4wODAxTC0xOC41NTg2IDMwLjUwODZDLTE3Ljk4NzIgMjguNTIyOSAtMTcuMzMgMjYuNTY1OCAtMTYuNTk0MyAyNC42MzcyTDQ5LjY5ODYgNTAuMDg3MlY1MC4wODAxWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTEgNTAuMDgyMkwtMTYuNTkzOCAyNC42MzIyQy0xNS44NTA5IDIyLjcwMzYgLTE1LjAyOTUgMjAuODEwOCAtMTQuMTIyMyAxOC45NTM2TDQ5LjY5OTEgNTAuMDgyMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTY0IDUwLjA4MTRMLTE0LjEyNSAxOC45NTI5Qy0xMy4yMTc5IDE3LjA5NTcgLTEyLjIzMjEgMTUuMjgxNCAtMTEuMTY3OSAxMy41MUw0OS42OTY0IDUwLjA4MTRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2MyA1MC4wODExTC0xMS4xNjggMTMuNTA5NkMtMTAuMTAzNyAxMS43MzgyIC04Ljk2MDgzIDEwLjAxNjggLTcuNzQ2NTQgOC4zNDUzNEw0OS42OTYzIDUwLjA4MTFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2MSA1MC4wODE4TC03Ljc1MzkxIDguMzQ2MDlDLTYuNTM5NjIgNi42NzQ2NiAtNS4yNTM5MSA1LjA2MDM4IC0zLjg5Njc2IDMuNDk2MDlMNDkuNjg4OSA1MC4wODE4SDQ5LjY5NjFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MyA1MC4wODI1TC0zLjg5NDUzIDMuNDk2NzZDLTIuNTM3MzkgMS45Mzk2MiAtMS4xMTU5NiAwLjQzOTYyIDAuMzY5NzU0IC0wLjk5NjA5NEw0OS42OTEyIDUwLjA4MjVINDkuNjk4M1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTk3IDUwLjA4MjRMMC4zNzEwOTQgLTAuOTk2MTI5QzEuODU2ODEgLTIuNDMxODQgMy40MDY4MSAtMy44MDMyNyA1LjAxMzk1IC01LjEwMzI3TDQ5LjY5OTcgNTAuMDgyNFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTc0IDUwLjA4MjRMNS4wMTE3MiAtNS4xMDMzNUM2LjYxODg2IC02LjQwMzM1IDguMjc2IC03LjYzMTkyIDkuOTkwMjkgLTguNzg5MDZMNDkuNjk3NCA1MC4wNzUyVjUwLjA4MjRaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MyA1MC4wODE0TDkuOTkyMTkgLTguNzkwMDRDMTEuNzA2NSAtOS45NDcxOCAxMy40NjM2IC0xMS4wMjU4IDE1LjI3MDggLTEyLjAyNThMNDkuNjkyMiA1MC4wODE0SDQ5LjY5OTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MSA1MC4wODA3TDE1LjI2OTUgLTEyLjAyNjVDMTcuMDc2NyAtMTMuMDI2NSAxOC45MjY3IC0xMy45NDc5IDIwLjgxMjQgLTE0Ljc5MDhMNDkuNjkxIDUwLjA3MzVINDkuNjk4MVY1MC4wODA3WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5ODIgNTAuMDgwOEwyMC44MTI1IC0xNC43OTA2QzIyLjY5ODIgLTE1LjYzMzQgMjQuNjE5NiAtMTYuMzkwNiAyNi41NzY4IC0xNy4wNjJMNDkuNjkxMSA1MC4wNzM3SDQ5LjY5ODJWNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTk2IDUwLjA4MTRMMjYuNTc4MSAtMTcuMDU0M0MyOC41MjgxIC0xNy43MjU3IDMwLjUxMzggLTE4LjMxMTQgMzIuNTIxIC0xOC44MTE0TDQ5LjY5OTYgNTAuMDg4NlY1MC4wODE0WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5ODEgNTAuMDc5OEwzMi41MTk1IC0xOC44MjAyQzM0LjUyNjcgLTE5LjMyMDIgMzYuNTQ4MSAtMTkuNzM0NSAzOC41OTEgLTIwLjA1NTlMNDkuNjk4MSA1MC4wNzk4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NyA1MC4wODA4TDM4LjU4OTggLTIwLjA0NzhDNDAuNjMyNyAtMjAuMzY5MiA0Mi42ODI3IC0yMC42MDQ5IDQ0Ljc0NyAtMjAuNzQ3OEw0OS42OTcgNTAuMDg3OVY1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NjEgNTAuMDgxMkw0NC43NDYxIC0yMC43NTQ2QzQ2LjgxMDQgLTIwLjg5NzQgNDguODc0NyAtMjAuOTU0NiA1MC45MzkgLTIwLjkxODhMNDkuNjk2MSA1MC4wNzRWNTAuMDgxMloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDRMNTAuOTQyMSAtMjAuOTEyNUM1My4wMDY0IC0yMC44NzY4IDU1LjA3MDYgLTIwLjc0ODIgNTcuMTI3OCAtMjAuNTMzOUw0OS43MDY0IDUwLjA4MDRINDkuNjk5MloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MTNMNTcuMTIwNiAtMjAuNTMzQzU5LjE3NzggLTIwLjMxODcgNjEuMjIwNiAtMjAuMDExNSA2My4yNDkyIC0xOS42MTg3TDQ5LjY5OTIgNTAuMDgxM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MjJMNjMuMjQ5MiAtMTkuNjE3OEM2NS4yNzc4IC0xOS4yMjQ5IDY3LjI4NDkgLTE4LjczOTIgNjkuMjcwNiAtMTguMTc0OUw0OS42OTkyIDUwLjA4MjJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NiA1MC4wODE4TDY5LjI3IC0xOC4xNzUzQzcxLjI1NTcgLTE3LjYwMzkgNzMuMjEyOCAtMTYuOTQ2NyA3NS4xNDE0IC0xNi4yMTFMNDkuNjkxNCA1MC4wODE4SDQ5LjY5ODZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NiA1MC4wODE5TDc1LjE0MTQgLTE2LjIxMDlDNzcuMDcgLTE1LjQ2ODEgNzguOTYyOCAtMTQuNjQ2NyA4MC44MiAtMTMuNzM5NUw0OS42OTE0IDUwLjA4MTlINDkuNjk4NloiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MjVMODAuODI3OCAtMTMuNzM4OUM4Mi42ODQ5IC0xMi44MzE3IDg0LjQ5OTIgLTExLjg0NiA4Ni4yNzA2IC0xMC43ODE3TDQ5LjY5OTIgNTAuMDgyNVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDJMODYuMjcwNiAtMTAuNzg0MUM4OC4wNDIxIC05LjcxOTc3IDg5Ljc2MzUgLTguNTc2OTEgOTEuNDM0OSAtNy4zNjI2M0w0OS42OTkyIDUwLjA4MDJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODIzTDkxLjQzNDkgLTcuMzYwNkM5My4xMDY0IC02LjE0NjMxIDk0LjcyMDYgLTQuODYwNiA5Ni4yODQ5IC0zLjUwMzQ1TDQ5LjY5OTIgNTAuMDgyM1oiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA3OTlMOTYuMjg0OSAtMy41MTI5NEM5Ny44NDIxIC0yLjE1NTggOTkuMzQyMSAtMC43MzQzNjggMTAwLjc3OCAwLjc1MTM0N0w0OS42OTkyIDUwLjA3MjhWNTAuMDc5OVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MTlMMTAwLjc3OCAwLjc1MzI5NkMxMDIuMjE0IDIuMjM5MDEgMTAzLjU4NSAzLjc4OTAxIDEwNC44ODUgNS4zOTYxNUw0OS42OTkyIDUwLjA4MTlaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODE4TDEwNC44NzggNS4zOTYxMkMxMDYuMTc4IDcuMDAzMjYgMTA3LjQwNiA4LjY2MDQgMTA4LjU2NCAxMC4zNzQ3TDQ5LjY5OTIgNTAuMDgxOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg2IDUwLjA4MDlMMTA4LjU2MyAxMC4zNzM4QzEwOS43MiAxMi4wODgxIDExMC43OTkgMTMuODQ1MiAxMTEuNzk5IDE1LjY1MjNMNDkuNjkxNCA1MC4wNzM4SDQ5LjY5ODZWNTAuMDgwOVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA3OTlMMTExLjgwNiAxNS42NTg0QzExMi44MDYgMTcuNDY1NiAxMTMuNzI4IDE5LjMxNTYgMTE0LjU3MSAyMS4yMDEzTDQ5LjcwNjQgNTAuMDc5OUg0OS42OTkyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgxMUwxMTQuNTYzIDIxLjIwMjVDMTE1LjQwNiAyMy4wODgyIDExNi4xNjMgMjUuMDA5NyAxMTYuODM1IDI2Ljk2NjhMNDkuNjk5MiA1MC4wODExWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5ODYgNTAuMDgxM0wxMTYuODM0IDI2Ljk2N0MxMTcuNTA2IDI4LjkxNyAxMTguMDkxIDMwLjkwMjggMTE4LjU5MSAzMi45MDk5TDQ5LjY5MTQgNTAuMDg4NUw0OS42OTg2IDUwLjA4MTNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODAzTDExOC41OTkgMzIuOTAxN0MxMTkuMDk5IDM0LjkwODkgMTE5LjUxNCAzNi45MzAzIDExOS44MzUgMzguOTczMkw0OS42OTkyIDUwLjA4MDNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NiA1MC4wODAzTDExOS44MjcgMzguOTczMUMxMjAuMTQ5IDQxLjAxNiAxMjAuMzg0IDQzLjA2NiAxMjAuNTI3IDQ1LjEzMDNMNDkuNjkxNCA1MC4wODAzSDQ5LjY5ODZaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODExTDEyMC41MzUgNDUuMTMxMUMxMjAuNjc4IDQ3LjE5NTQgMTIwLjczNSA0OS4yNTk3IDEyMC42OTkgNTEuMzI0TDQ5LjcwNjQgNTAuMDgxMUg0OS42OTkyWiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwOEwxMjAuNjkyIDUxLjMyMzdDMTIwLjY1NiA1My4zODggMTIwLjUyOCA1NS40NTIyIDEyMC4zMTQgNTcuNTA5NEw0OS42OTkyIDUwLjA4OFY1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwOEwxMjAuMzE0IDU3LjUwMjJDMTIwLjA5OSA1OS41NTk0IDExOS43OTIgNjEuNjAyMiAxMTkuMzk5IDYzLjYzMDhMNDkuNjk5MiA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwOEwxMTkuMzk5IDYzLjYzMDhDMTE5LjAwNiA2NS42NTk0IDExOC41MjEgNjcuNjY2NSAxMTcuOTU2IDY5LjY1MjJMNDkuNjk5MiA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgyNUwxMTcuOTU2IDY5LjY1MzlDMTE3LjM4NSA3MS42Mzk2IDExNi43MjggNzMuNTk2NyAxMTUuOTkyIDc1LjUyNTNMNDkuNjk5MiA1MC4wNzUzVjUwLjA4MjVaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDExNS45OTIgNzUuNTMwOEMxMTUuMjQ5IDc3LjQ1OTQgMTE0LjQyOCA3OS4zNTIyIDExMy41MjEgODEuMjA5NEw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDExMy41MjEgODEuMjA5NEMxMTIuNjEzIDgzLjA2NjUgMTExLjYyOCA4NC44ODA4IDExMC41NjMgODYuNjUyMkw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDExMC41NjMgODYuNjUyMkMxMDkuNDk5IDg4LjQyMzcgMTA4LjM1NiA5MC4xNDUxIDEwNy4xNDIgOTEuODE2NUw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDEwNy4xNDIgOTEuODE2NUMxMDUuOTI4IDkzLjQ4NzkgMTA0LjY0MiA5NS4xMDIyIDEwMy4yODUgOTYuNjY2NUw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDEwMy4yODUgOTYuNjY2NUMxMDEuOTI4IDk4LjIyMzcgMTAwLjUwNiA5OS43MjM3IDk5LjAyMDYgMTAxLjE1OUw0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDk5LjAyMDcgMTAxLjE1OUM5Ny41MzQ5IDEwMi41OTUgOTUuOTg0OSAxMDMuOTY3IDk0LjM4NDkgMTA1LjI2N0w0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDk0LjM4NDkgMTA1LjI2N0M5Mi43Nzc4IDEwNi41NjcgOTEuMTIwNiAxMDcuNzk1IDg5LjQwNjQgMTA4Ljk1Mkw0OS42OTkyIDUwLjA4OFY1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgyNUw4OS40MDY0IDEwOC45NDdDODcuNjkyMSAxMTAuMTA0IDg1LjkzNDkgMTExLjE4MiA4NC4xMjc4IDExMi4xODJMNDkuNzA2NCA1MC4wNzUzSDQ5LjY5OTJWNTAuMDgyNVoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMODQuMTIwNiAxMTIuMTg4QzgyLjMxMzUgMTEzLjE4OCA4MC40NjM1IDExNC4xMDkgNzguNTc3OCAxMTQuOTUyTDQ5LjY5OTIgNTAuMDg4VjUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5MiA1MC4wODA4TDc4LjU3NzggMTE0Ljk0NUM3Ni42OTIxIDExNS43ODggNzQuNzcwNiAxMTYuNTQ1IDcyLjgxMzUgMTE3LjIxN0w0OS42OTkyIDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NiA1MC4wODI1TDcyLjgxMjggMTE3LjIxOEM3MC44NTU3IDExNy44OSA2OC44NzcxIDExOC40NzUgNjYuODcgMTE4Ljk3NUw0OS42OTE0IDUwLjA3NTNINDkuNjk4NlY1MC4wODI1WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTIgNTAuMDgwOEw2Ni44Nzc4IDExOC45ODFDNjQuODcwNiAxMTkuNDgxIDYyLjg0OTIgMTE5Ljg5NSA2MC44MDY0IDEyMC4yMTdMNDkuNjk5MiA1MC4wODhWNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTkyIDUwLjA4MDhMNjAuODA2NCAxMjAuMjE3QzU4Ljc2MzUgMTIwLjUzOCA1Ni43MTM1IDEyMC43NzQgNTQuNjQ5MiAxMjAuOTE3TDQ5LjY5OTIgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTYgNTAuMDgwOEw1NC42NDYgMTIwLjkxN0M1Mi41ODE3IDEyMS4wNTkgNTAuNTE3NCAxMjEuMTE3IDQ4LjQ1MzEgMTIxLjA4MUw0OS42OTYgNTAuMDg4VjUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4MSA1MC4wODA4TDQ4LjQ1NTIgMTIxLjA3NEM0Ni4zOTEgMTIxLjAzOCA0NC4zMjY3IDEyMC45MDkgNDIuMjY5NSAxMjAuNjk1TDQ5LjY5MSA1MC4wODA4SDQ5LjY5ODFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk4NCA1MC4wODA4TDQyLjI3NyAxMjAuNjk1QzQwLjIxOTkgMTIwLjQ4MSAzOC4xNzcgMTIwLjE3NCAzNi4xNDg0IDExOS43ODFMNDkuNjk4NCA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NjQgNTAuMDgwOEwzNi4xNDY0IDExOS43ODFDMzQuMTE3OSAxMTkuMzg4IDMyLjExMDcgMTE4LjkwMiAzMC4xMjUgMTE4LjMzOEw0OS42OTY0IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk2OCA1MC4wODA4TDMwLjEyNTMgMTE4LjMzOEMyOC4xMzk2IDExNy43NjcgMjYuMTgyNSAxMTcuMTA5IDI0LjI1MzkgMTE2LjM3NEw0OS43MDM5IDUwLjA4MDhINDkuNjk2OFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTg5IDUwLjA4MDhMMjQuMjQ4OSAxMTYuMzc0QzIyLjMyMDMgMTE1LjYzMSAyMC40Mjc1IDExNC44MDkgMTguNTcwMyAxMTMuOTAyTDQ5LjY5ODkgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjxwYXRoIGQ9Ik00OS42OTY0IDUwLjA4MDhMMTguNTY3OSAxMTMuOTAyQzE2LjcxMDcgMTEyLjk5NSAxNC44OTY0IDExMi4wMDkgMTMuMTI1IDExMC45NDVMNDkuNjk2NCA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NjcgNTAuMDgwOEwxMy4xMjUyIDExMC45NDVDMTEuMzUzOCAxMDkuODgxIDkuNjMyMzcgMTA4LjczOCA3Ljk2MDk0IDEwNy41MjRMNDkuNjk2NyA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5ODMgNTAuMDgwOEw3Ljk1NTQ3IDEwNy41MjRDNi4yODQwNCAxMDYuMzA5IDQuNjY5NzUgMTA1LjAyNCAzLjEwNTQ3IDEwMy42NjdMNDkuNjkxMiA1MC4wODA4SDQ5LjY5ODNaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk5NyA1MC4wODA4TDMuMTEzOTUgMTAzLjY2N0MxLjU1NjgxIDEwMi4zMDkgMC4wNTY4MDc5IDEwMC44ODggLTEuMzc4OTEgOTkuNDAyMkw0OS42OTk3IDUwLjA4MDhaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNNDkuNjk3NCA1MC4wODA4TC0xLjM4MTE0IDk5LjQwMjJDLTIuODE2ODUgOTcuOTE2NSAtNC4xODgyOCA5Ni4zNjY1IC01LjQ4ODI4IDk0Ljc2NjVMNDkuNjk3NCA1MC4wODA4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5OTYgNTAuMDgwOEwtNS40ODYxNiA5NC43NjY1Qy02Ljc4NjE2IDkzLjE1OTQgLTguMDE0NzMgOTEuNTAyMiAtOS4xNzE4OCA4OS43ODc5TDQ5LjY5MjQgNTAuMDgwOEg0OS42OTk2WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTQ5LjY5NyA1MC4wODA4TC05LjE3NDQ0IDg5Ljc4OEMtMTAuMzMxNiA4OC4wNzM3IC0xMS40MTAyIDg2LjMwOTQgLTEyLjQxMDIgODQuNTAyMkw0OS42OTcgNTAuMDgwOFoiIGZpbGw9IndoaXRlIi8+CjwvZz4KPC9nPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2ZfODUxMF84MzM4IiB4PSItMzguNDU1NCIgeT0iLTM4LjA3MjEiIHdpZHRoPSIxNzYuMzA5IiBoZWlnaHQ9IjE3Ni4zMDYiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0ic2hhcGUiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iOC41NzE0MyIgcmVzdWx0PSJlZmZlY3QxX2ZvcmVncm91bmRCbHVyXzg1MTBfODMzOCIvPgo8L2ZpbHRlcj4KPGNsaXBQYXRoIGlkPSJjbGlwMF84NTEwXzgzMzgiPgo8cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0id2hpdGUiLz4KPC9jbGlwUGF0aD4KPC9kZWZzPgo8L3N2Zz4K"};
+      config.getSettings=function(){return SITE_SETTINGS;};
+      config.getCounter=function(){return SITE_SETTINGS.yandexMetrikaId;};
+      window.__conversiaMax=window.ConversiaMax.install(config);}
+      if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',start,{once:true});
+      else start();})();</script>
+<!-- CONVERSIA_MAX_RUNTIME_END -->
+</body>
+</html>
+
+
